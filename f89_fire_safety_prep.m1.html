@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>F-89 Fire Safety Director — Exam Prep</title>
+
+<!-- PWA Meta Tags -->
+<meta name="application-name" content="F-89 Exam Prep">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="F-89 Prep">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0a1628">
+<meta name="description" content="F-89 Fire & Life Safety Director exam prep — practice and exam modes, code & terms reference.">
+
+<!-- PWA Manifest (inline as data URI so it works from a single HTML file) -->
+<link rel="manifest" href="data:application/manifest+json,{
+  %22name%22:%22F-89%20Fire%20Safety%20Director%20Exam%20Prep%22,
+  %22short_name%22:%22F-89%20Prep%22,
+  %22description%22:%22F-89%20Fire%20%26%20Life%20Safety%20Director%20exam%20prep%20app%22,
+  %22start_url%22:%22.%22,
+  %22display%22:%22standalone%22,
+  %22background_color%22:%22%230a1628%22,
+  %22theme_color%22:%22%230a1628%22,
+  %22orientation%22:%22portrait%22,
+  %22icons%22:[
+    {%22src%22:%22data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20192%20192'%3E%3Crect%20width='192'%20height='192'%20fill='%230a1628'/%3E%3Ccircle%20cx='96'%20cy='96'%20r='80'%20fill='%231a3a6b'/%3E%3Ctext%20x='96'%20y='128'%20font-size='100'%20text-anchor='middle'%20fill='%23f0a500'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E%22,%22sizes%22:%22192x192%22,%22type%22:%22image/svg+xml%22},
+    {%22src%22:%22data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Crect%20width='512'%20height='512'%20fill='%230a1628'/%3E%3Ccircle%20cx='256'%20cy='256'%20r='220'%20fill='%231a3a6b'/%3E%3Ctext%20x='256'%20y='340'%20font-size='260'%20text-anchor='middle'%20fill='%23f0a500'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E%22,%22sizes%22:%22512x512%22,%22type%22:%22image/svg+xml%22}
+  ]
+}">
+
+<!-- Apple touch icon (flame on dark navy) -->
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%230a1628'/><circle cx='90' cy='90' r='72' fill='%231a3a6b'/><text x='90' y='122' font-size='90' text-anchor='middle' fill='%23f0a500'>🔥</text></svg>">
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0a1628; --navy2:#0f2040; --blue:#1a3a6b;
+  --accent:#f0a500; --accent2:#ffbe3d;
+  --green:#00c853; --red:#ff3d3d; --purple:#7c4dff;
+  --white:#f5f7fa; --gray:#8a9bb5; --card:#0d1f3c; --border:#1e3a5f;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--navy);color:var(--white);font-family:'Barlow',sans-serif;min-height:100vh;overflow-x:hidden;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(240,165,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,165,0,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
+.screen{display:none;position:relative;z-index:1;}
+.screen.active{display:flex;flex-direction:column;min-height:100vh;}
+
+/* ── HOME ─────────────────────────────────────────────── */
+#home{align-items:center;justify-content:center;padding:32px 20px;padding-top:calc(32px + env(safe-area-inset-top));gap:0;}
+.logo-badge{background:var(--accent);color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border-radius:2px;margin-bottom:20px;}
+.home-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,12vw,90px);line-height:.9;text-align:center;text-transform:uppercase;margin-bottom:6px;}
+.home-title span{color:var(--accent);display:block;}
+.home-subtitle{color:var(--gray);font-size:14px;text-align:center;margin-bottom:24px;letter-spacing:.5px;}
+
+/* Progress bar graph */
+.home-progress{width:100%;max-width:380px;margin-bottom:24px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 18px;}
+.hp-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-bottom:12px;}
+.hp-bars{display:flex;align-items:flex-end;gap:8px;height:60px;}
+.hp-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;}
+.hp-bar{width:100%;background:var(--accent);border-radius:3px 3px 0 0;min-height:4px;transition:height .5s ease;}
+.hp-bar.empty{background:var(--border);}
+.hp-score{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;color:var(--gray);}
+.hp-stats{display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);}
+.hp-stat{text-align:center;flex:1;}
+.hp-stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--accent);line-height:1;}
+.hp-stat-label{font-size:10px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+.hp-empty-msg{color:var(--gray);font-size:13px;text-align:center;padding:8px 0;}
+
+.btn-electrical{background:var(--accent);color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:2px;text-transform:uppercase;border:none;padding:18px 44px;border-radius:4px;cursor:pointer;transition:all .15s;margin-bottom:16px;width:100%;max-width:380px;}
+.btn-electrical:hover{background:var(--accent2);transform:translateY(-2px);}
+.btn-formula-home{background:transparent;color:var(--gray);border:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:1px;text-transform:uppercase;padding:12px 24px;border-radius:4px;cursor:pointer;transition:all .15s;width:100%;max-width:380px;}
+.btn-formula-home:hover{color:var(--accent);border-color:var(--accent);}
+
+/* ── MODE SELECT ──────────────────────────────────────── */
+#mode-select{align-items:center;justify-content:flex-start;padding:32px 20px 60px;padding-top:calc(32px + env(safe-area-inset-top));}
+.screen-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:6px;}
+.screen-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(32px,8vw,56px);text-transform:uppercase;text-align:center;margin-bottom:20px;}
+.q-count-wrap{width:100%;max-width:420px;margin-bottom:20px;text-align:center;}
+.q-count-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:10px;}
+.q-count-pills{display:flex;gap:8px;justify-content:center;}
+.q-pill{background:var(--card);border:2px solid var(--border);color:var(--gray);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;width:58px;height:44px;border-radius:6px;cursor:pointer;transition:all .15s;}
+.q-pill:hover{border-color:var(--accent);color:var(--white);}
+.q-pill.active{background:var(--accent);border-color:var(--accent);color:var(--navy);}
+
+/* Category selector */
+.cat-wrap{width:100%;max-width:420px;margin-bottom:20px;}
+.cat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cat-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+.cat-count{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:var(--accent);letter-spacing:.5px;}
+.cat-toggle-btn{background:transparent;border:none;color:var(--gray);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;padding:4px 0;display:flex;align-items:center;gap:4px;transition:color .15s;}
+.cat-toggle-btn:hover{color:var(--accent);}
+.cat-toggle-btn .chev{transition:transform .2s;display:inline-block;}
+.cat-toggle-btn.open .chev{transform:rotate(180deg);}
+.cat-chips{display:flex;flex-wrap:wrap;gap:7px;overflow:hidden;transition:max-height .25s ease;}
+.cat-chips.collapsed{max-height:0;}
+.cat-chip{background:var(--card);border:1.5px solid var(--border);color:var(--gray);font-family:'Barlow',sans-serif;font-weight:600;font-size:12px;padding:7px 12px;border-radius:20px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px;line-height:1;}
+.cat-chip:hover{border-color:var(--accent);color:var(--white);}
+.cat-chip.active{background:rgba(240,165,0,.14);border-color:var(--accent);color:var(--accent2);}
+.cat-chip .chip-n{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;opacity:.7;}
+.cat-chip.all-chip{background:var(--blue);border-color:var(--blue);color:var(--white);font-weight:700;}
+.cat-chip.all-chip.active{background:var(--accent);border-color:var(--accent);color:var(--navy);}
+.cat-empty-warn{font-size:11px;color:var(--red);text-align:center;margin-top:8px;display:none;}
+.mode-cards{display:flex;flex-direction:column;gap:12px;width:100%;max-width:420px;}
+.mode-card{background:var(--card);border:2px solid var(--border);border-radius:8px;padding:22px;cursor:pointer;transition:all .2s;text-align:left;width:100%;}
+.mode-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.mode-card.practice:hover{border-color:var(--green);}
+.mode-card.exam:hover{border-color:var(--accent);}
+.mode-card.flashcard:hover{border-color:var(--purple);}
+.mode-card.drill:hover{border-color:var(--red);}
+.mode-icon{font-size:26px;margin-bottom:8px;}
+.mode-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.mode-card.practice .mode-name{color:var(--green);}
+.mode-card.exam .mode-name{color:var(--accent);}
+.mode-card.flashcard .mode-name{color:var(--purple);}
+.mode-card.drill .mode-name{color:var(--red);}
+.mode-desc{color:var(--gray);font-size:13px;line-height:1.5;}
+.mode-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;}
+.pill{font-size:10px;padding:3px 9px;border-radius:20px;border:1px solid;letter-spacing:.5px;font-weight:600;}
+.mode-card.practice .pill{border-color:var(--green);color:var(--green);}
+.mode-card.exam .pill{border-color:var(--accent);color:var(--accent);}
+.mode-card.flashcard .pill{border-color:var(--purple);color:var(--purple);}
+.mode-card.drill .pill{border-color:var(--red);color:var(--red);}
+.btn-back{background:transparent;color:var(--gray);border:1px solid var(--border);font-family:'Barlow',sans-serif;font-size:13px;padding:9px 20px;border-radius:4px;cursor:pointer;margin-top:14px;transition:all .15s;}
+.btn-back:hover{color:var(--white);border-color:var(--gray);}
+.drill-unavail{font-size:11px;color:var(--red);text-align:center;margin-top:6px;display:none;}
+
+/* ── QUIZ HEADER ──────────────────────────────────────── */
+.quiz-header{background:var(--navy2);border-bottom:1px solid var(--border);padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top));display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;z-index:10;}
+.quiz-mode-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:3px;flex-shrink:0;}
+.quiz-mode-badge.practice{background:rgba(0,200,83,.15);color:var(--green);}
+.quiz-mode-badge.exam{background:rgba(240,165,0,.15);color:var(--accent);}
+.quiz-mode-badge.flashcard{background:rgba(124,77,255,.15);color:var(--purple);}
+.quiz-mode-badge.drill{background:rgba(255,61,61,.15);color:var(--red);}
+.quiz-progress-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.quiz-counter{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--white);letter-spacing:1px;}
+.progress-bar{width:100%;max-width:180px;height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .3s ease;}
+.practice .progress-fill{background:var(--green);}
+.flashcard .progress-fill{background:var(--purple);}
+.drill .progress-fill{background:var(--red);}
+.quiz-right-info{display:flex;align-items:center;gap:7px;}
+.streak-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;color:var(--accent);display:none;}
+.streak-badge.visible{display:block;}
+.timer-display{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--white);letter-spacing:1px;display:none;}
+.flag-btn,.tapout-btn,.tts-btn-hdr{background:none;border:1px solid var(--border);color:var(--gray);width:32px;height:32px;border-radius:4px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;}
+.flag-btn.flagged{border-color:var(--accent);color:var(--accent);background:rgba(240,165,0,.1);}
+.tapout-btn{background:rgba(255,61,61,.1);border-color:rgba(255,61,61,.3);color:var(--red);}
+.tapout-btn:hover{background:rgba(255,61,61,.2);border-color:var(--red);}
+
+/* ── HINT & FORMULA QUIZ BUTTONS ──────────────────────── */
+.quiz-action-row{display:flex;gap:10px;margin-bottom:16px;}
+.btn-hint{flex:1;background:rgba(124,77,255,.1);border:1px solid rgba(124,77,255,.35);color:var(--purple);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:10px 14px;border-radius:6px;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.btn-hint:hover{background:rgba(124,77,255,.2);border-color:var(--purple);}
+.btn-hint:disabled{opacity:.35;cursor:default;}
+.btn-hint.used{opacity:.4;cursor:default;}
+.btn-formula-quiz{flex:1;background:rgba(240,165,0,.08);border:1px solid rgba(240,165,0,.3);color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:10px 14px;border-radius:6px;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.btn-formula-quiz:hover{background:rgba(240,165,0,.15);border-color:var(--accent);}
+.hint-box{background:rgba(124,77,255,.08);border:1px solid rgba(124,77,255,.3);border-radius:8px;padding:14px 16px;margin-bottom:16px;display:none;animation:fadeUp .2s ease;}
+.hint-box.visible{display:block;}
+.hint-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--purple);margin-bottom:6px;}
+.hint-text{font-size:13px;color:var(--white);opacity:.85;line-height:1.5;}
+.streak-cost{font-size:10px;color:rgba(124,77,255,.6);margin-top:4px;font-style:italic;}
+#quiz{padding:0;min-height:100vh;}
+.quiz-body{padding:20px 18px 40px;max-width:640px;margin:0 auto;width:100%;}
+
+/* Passage split */
+.passage-box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:18px;}
+.passage-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:8px;}
+.passage-text{font-size:14px;line-height:1.7;color:var(--white);opacity:.9;max-height:180px;overflow-y:auto;}
+.passage-group-tag{font-size:11px;color:var(--gray);margin-bottom:4px;letter-spacing:.5px;}
+
+.q-top-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.category-tag{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+.tts-btn{background:var(--card);border:1px solid var(--border);color:var(--gray);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;}
+.tts-btn:hover{border-color:var(--accent);color:var(--accent);}
+.tts-btn.speaking{border-color:var(--accent);background:rgba(240,165,0,.15);animation:pulse 1s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(240,165,0,.4);}50%{box-shadow:0 0 0 6px rgba(240,165,0,0);}}
+.question-text{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(20px,5vw,28px);line-height:1.25;margin-bottom:24px;color:var(--white);}
+.options-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.option-btn{background:var(--card);border:2px solid var(--border);color:var(--white);font-family:'Barlow',sans-serif;font-size:15px;font-weight:500;padding:16px 18px;border-radius:8px;cursor:pointer;text-align:left;transition:all .15s;display:flex;align-items:flex-start;gap:12px;line-height:1.4;}
+.option-btn:hover:not(:disabled){border-color:var(--accent);background:rgba(240,165,0,.06);}
+.option-btn:disabled{cursor:default;}
+.option-letter{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;min-width:22px;color:var(--gray);line-height:1.2;flex-shrink:0;}
+.option-btn.correct{border-color:var(--green);background:rgba(0,200,83,.1);}
+.option-btn.correct .option-letter{color:var(--green);}
+.option-btn.selected-wrong{border-color:var(--red);background:rgba(255,61,61,.08);animation:shake .3s ease;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+.feedback-box{border-radius:8px;padding:16px 18px;margin-bottom:18px;display:none;animation:fadeUp .25s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.feedback-box.correct-fb{background:rgba(0,200,83,.1);border:1px solid rgba(0,200,83,.3);display:block;}
+.feedback-box.wrong-fb{background:rgba(255,61,61,.08);border:1px solid rgba(255,61,61,.25);display:block;}
+.feedback-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.feedback-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:1px;}
+.correct-fb .feedback-title{color:var(--green);}
+.wrong-fb .feedback-title{color:var(--red);}
+.feedback-text{font-size:13px;color:var(--white);line-height:1.6;opacity:.85;}
+.btn-next{background:var(--accent);color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:2px;text-transform:uppercase;border:none;padding:15px;border-radius:4px;cursor:pointer;width:100%;transition:all .15s;display:none;}
+.btn-next:hover{background:var(--accent2);}
+.btn-next.visible{display:block;}
+.btn-next.practice-style{background:var(--green);}
+.btn-next.practice-style:hover{background:#00e676;}
+.btn-next.drill-style{background:var(--red);}
+
+/* ── FLASHCARD ────────────────────────────────────────── */
+.flashcard-body{padding:24px 20px 40px;max-width:520px;margin:0 auto;width:100%;display:flex;flex-direction:column;align-items:center;flex:1;}
+.fc-cat{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:8px;margin-top:18px;}
+.fc-tap-hint{font-size:12px;color:var(--gray);margin-bottom:14px;letter-spacing:.5px;}
+.fc-card{background:var(--card);border:2px solid var(--border);border-radius:12px;padding:32px 24px;width:100%;min-height:320px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-align:center;transition:all .25s;position:relative;}
+.fc-card:hover{border-color:var(--purple);}
+.fc-card.flipped{border-color:var(--purple);background:rgba(124,77,255,.06);}
+.fc-q{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(20px,5vw,28px);line-height:1.3;color:var(--white);}
+.fc-a{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(22px,5.5vw,30px);line-height:1.3;color:var(--purple);display:none;}
+.fc-card.flipped .fc-q{display:none;}
+.fc-card.flipped .fc-a{display:block;}
+.fc-actions{display:flex;gap:10px;width:100%;margin-top:16px;}
+.fc-btn{flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:1px;text-transform:uppercase;padding:14px;border-radius:6px;cursor:pointer;border:2px solid;}
+.fc-btn.knew{background:rgba(0,200,83,.1);border-color:var(--green);color:var(--green);}
+.fc-btn.missed{background:rgba(255,61,61,.08);border-color:var(--red);color:var(--red);}
+
+/* ── FORMULA / REFERENCE SHEET ────────────────────────── */
+#formula-sheet{padding:0;}
+.fs-header{background:var(--navy2);border-bottom:1px solid var(--border);padding:14px 18px;padding-top:calc(14px + env(safe-area-inset-top));display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:10;}
+.fs-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;text-transform:uppercase;letter-spacing:1px;flex:1;}
+.fs-body{padding:18px;max-width:640px;margin:0 auto;width:100%;padding-bottom:60px;}
+.fs-section{margin-bottom:24px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 18px;}
+.fs-section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:8px;}
+.fs-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(30,58,95,.5);}
+.fs-formula{font-family:'Courier New',monospace;font-weight:700;font-size:14px;color:var(--white);min-width:160px;flex-shrink:0;}
+.fs-desc{font-size:13px;color:var(--gray);line-height:1.4;flex:1;}
+.fs-prefix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.fs-prefix-grid.wide{grid-template-columns:repeat(2,1fr);}
+.fs-prefix-card{background:var(--navy2);border:1px solid var(--border);border-radius:6px;padding:10px 8px;text-align:center;}
+.fs-prefix-sym{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--accent);line-height:1.1;}
+.fs-prefix-name{font-size:10px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin:3px 0;}
+.fs-prefix-val{font-size:11px;color:var(--white);line-height:1.35;}
+.fs-mini-header{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin:14px 0 6px;padding-bottom:4px;border-bottom:1px dashed rgba(240,165,0,.25);}
+.fs-mini-header:first-child{margin-top:0;}
+
+/* ── RESULTS ──────────────────────────────────────────── */
+#results{align-items:center;justify-content:flex-start;padding:32px 20px 60px;padding-top:calc(32px + env(safe-area-inset-top));}
+.results-header{text-align:center;margin-bottom:32px;width:100%;max-width:480px;}
+.results-score-ring{width:140px;height:140px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 20px;border:5px solid var(--accent);background:var(--card);}
+.results-score-ring.pass{border-color:var(--green);}
+.results-score-ring.fail{border-color:var(--red);}
+.score-fraction{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:38px;line-height:1;color:var(--white);}
+.score-pct{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--accent);}
+.results-score-ring.pass .score-pct{color:var(--green);}
+.results-score-ring.fail .score-pct{color:var(--red);}
+.results-verdict{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;text-transform:uppercase;margin-bottom:6px;}
+.results-verdict.pass{color:var(--green);}
+.results-verdict.fail{color:var(--red);}
+.results-sub{color:var(--gray);font-size:13px;line-height:1.5;}
+.category-breakdown{width:100%;max-width:480px;margin-bottom:28px;}
+.breakdown-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-bottom:12px;}
+.breakdown-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.breakdown-cat{font-size:12px;font-weight:600;min-width:120px;color:var(--white);}
+.breakdown-bar-wrap{flex:1;height:7px;background:var(--border);border-radius:4px;overflow:hidden;}
+.breakdown-bar{height:100%;border-radius:4px;}
+.breakdown-frac{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;min-width:32px;text-align:right;}
+.results-actions{display:flex;flex-direction:column;gap:10px;width:100%;max-width:480px;}
+.btn-review{background:var(--card);border:2px solid var(--border);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:1px;text-transform:uppercase;padding:14px;border-radius:4px;cursor:pointer;transition:all .15s;}
+.btn-review:hover{border-color:var(--accent);color:var(--accent);}
+.btn-home-res{background:var(--accent);color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:2px;text-transform:uppercase;border:none;padding:15px;border-radius:4px;cursor:pointer;transition:all .15s;}
+.btn-home-res:hover{background:var(--accent2);}
+
+/* ── REVIEW ───────────────────────────────────────────── */
+#review{padding:0;}
+.review-header{background:var(--navy2);border-bottom:1px solid var(--border);padding:14px 18px;padding-top:calc(14px + env(safe-area-inset-top));display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:10;}
+.review-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;text-transform:uppercase;letter-spacing:1px;flex:1;}
+.review-body{padding:18px;max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:14px;padding-bottom:60px;}
+.review-card{background:var(--card);border-radius:8px;padding:18px;border-left:4px solid;}
+.review-card.wrong-card{border-color:var(--red);}
+.review-card.flagged-card{border-color:var(--accent);}
+.review-q-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.review-status{font-size:16px;flex-shrink:0;}
+.review-q-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;}
+.review-q-text{font-weight:600;font-size:14px;line-height:1.4;margin-bottom:10px;color:var(--white);}
+.review-answer-row{font-size:12px;margin-bottom:3px;}
+.review-correct-ans{color:var(--green);}
+.review-wrong-ans{color:var(--red);}
+.review-explanation{font-size:12px;color:var(--gray);line-height:1.5;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+
+/* ── MODAL ────────────────────────────────────────────── */
+.modal-overlay{position:fixed;inset:0;background:rgba(5,12,24,.88);z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;}
+.modal-box{background:var(--navy2);border:1px solid var(--border);border-radius:12px;padding:32px 24px;width:100%;max-width:340px;text-align:center;animation:fadeUp .2s ease;}
+.modal-icon{font-size:36px;margin-bottom:10px;}
+.modal-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;margin-bottom:10px;color:var(--white);}
+.modal-desc{color:var(--gray);font-size:14px;line-height:1.5;margin-bottom:24px;}
+.modal-actions{display:flex;flex-direction:column;gap:8px;}
+.modal-btn-confirm{background:var(--red);color:white;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:1px;text-transform:uppercase;padding:13px;border-radius:4px;cursor:pointer;}
+.modal-btn-cancel{background:transparent;color:var(--gray);border:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase;padding:11px;border-radius:4px;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<!-- ══ HOME ══════════════════════════════════════════════ -->
+<div id="home" class="screen active">
+  <div class="logo-badge">F-89 Fire Safety Director</div>
+  <div class="home-title">Exam<span>Prep</span></div>
+  <p class="home-subtitle">106 questions · 12 categories · Built from the NYFSI course</p>
+
+  <div class="home-progress" id="home-progress">
+    <div class="hp-label">Last 5 Sessions</div>
+    <div id="hp-bars-wrap">
+      <div class="hp-empty-msg">No sessions yet — start your first test!</div>
+    </div>
+    <div class="hp-stats" id="hp-stats" style="display:none">
+      <div class="hp-stat"><div class="hp-stat-num" id="hp-best">—</div><div class="hp-stat-label">Best</div></div>
+      <div class="hp-stat"><div class="hp-stat-num" id="hp-avg">—</div><div class="hp-stat-label">Avg</div></div>
+      <div class="hp-stat"><div class="hp-stat-num" id="hp-sessions">0</div><div class="hp-stat-label">Sessions</div></div>
+    </div>
+  </div>
+
+  <button class="btn-electrical" onclick="showScreen('mode-select')">🔥 Start Training</button>
+  <button class="btn-formula-home" onclick="showScreen('formula-sheet')">📖 Code & Terms Reference</button>
+</div>
+
+<!-- ══ MODE SELECT ════════════════════════════════════════ -->
+<div id="mode-select" class="screen">
+  <div class="screen-label" style="margin-top:32px">Choose Your Mode</div>
+  <div class="screen-title">How do you<br>want to train?</div>
+
+  <div class="q-count-wrap">
+    <div class="q-count-label">Questions per session</div>
+    <div class="q-count-pills">
+      <button class="q-pill active" onclick="setCount(10,this)">10</button>
+      <button class="q-pill" onclick="setCount(20,this)">20</button>
+      <button class="q-pill" onclick="setCount(30,this)">30</button>
+      <button class="q-pill" onclick="setCount(50,this)">50</button>
+    </div>
+  </div>
+
+  <div class="cat-wrap">
+    <div class="cat-header">
+      <span class="cat-label">Categories</span>
+      <span class="cat-count" id="cat-count">All · 96 Qs</span>
+    </div>
+    <button class="cat-toggle-btn" id="cat-toggle" onclick="toggleCatPicker()">
+      <span id="cat-toggle-text">Choose specific categories</span>
+      <span class="chev">▾</span>
+    </button>
+    <div class="cat-chips collapsed" id="cat-chips"></div>
+    <div class="cat-empty-warn" id="cat-empty-warn">Select at least one category to start.</div>
+  </div>
+
+  <div class="mode-cards">
+    <button class="mode-card practice" onclick="startQuiz('practice')">
+      <div class="mode-icon">🎯</div>
+      <div class="mode-name">Practice</div>
+      <div class="mode-desc">Instant feedback, one retry, full explanations. Read-aloud on every question.</div>
+      <div class="mode-pills"><span class="pill">Feedback</span><span class="pill">Explanations</span><span class="pill">🔊 Audio</span><span class="pill">🔥 Streak</span></div>
+    </button>
+    <button class="mode-card exam" onclick="startQuiz('exam')">
+      <div class="mode-icon">📋</div>
+      <div class="mode-name">Exam Mode</div>
+      <div class="mode-desc">Simulates the real test. Timer on. No hints until the end. Tap Out anytime.</div>
+      <div class="mode-pills"><span class="pill">Timed</span><span class="pill">Tap Out</span><span class="pill">Score + %</span><span class="pill">Breakdown</span></div>
+    </button>
+    <button class="mode-card flashcard" onclick="startFlashcard()">
+      <div class="mode-icon">🃏</div>
+      <div class="mode-name">Flashcards</div>
+      <div class="mode-desc">Pure recall — no multiple choice. Tap to flip, mark what you knew vs missed.</div>
+      <div class="mode-pills"><span class="pill">Flip to Reveal</span><span class="pill">Knew It / Missed It</span></div>
+    </button>
+    <button class="mode-card drill" id="drill-btn" onclick="startDrill()">
+      <div class="mode-icon">🎯</div>
+      <div class="mode-name">Weak Spot Drill</div>
+      <div class="mode-desc">Targets your worst categories based on your history. Needs 2+ sessions.</div>
+      <div class="mode-pills"><span class="pill">Adaptive</span><span class="pill">Targeted</span><span class="pill">Auto-Focus</span></div>
+    </button>
+    <div class="drill-unavail" id="drill-unavail">Complete 2+ sessions to unlock Weak Spot Drill</div>
+  </div>
+  <button class="btn-back" onclick="showScreen('home')">← Back</button>
+</div>
+
+<!-- ══ QUIZ ════════════════════════════════════════════════ -->
+<div id="quiz" class="screen">
+  <div class="quiz-header">
+    <span class="quiz-mode-badge" id="mode-badge">Practice</span>
+    <div class="quiz-progress-wrap">
+      <span class="quiz-counter" id="quiz-counter">Q 1 / 10</span>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="quiz-right-info">
+      <span class="streak-badge" id="streak-badge">🔥 0</span>
+      <div class="timer-display" id="timer-display">00:00</div>
+      <button class="flag-btn" id="flag-btn" onclick="toggleFlag()" title="Flag">🚩</button>
+      <button class="tapout-btn" id="tapout-btn" onclick="tapOut()" title="Tap Out">✋</button>
+    </div>
+  </div>
+
+  <div class="quiz-body">
+    <div id="passage-area" style="display:none">
+      <div class="passage-box">
+        <div class="passage-label">📄 Read the Following Passage</div>
+        <div class="passage-text" id="passage-text"></div>
+      </div>
+      <div class="passage-group-tag" id="passage-group-tag"></div>
+    </div>
+    <div class="q-top-row">
+      <div class="category-tag" id="q-category">Category</div>
+      <button class="tts-btn" id="tts-q-btn" onclick="speakQuestion()" title="Read aloud">🔊</button>
+    </div>
+    <div class="question-text" id="q-text">Question text</div>
+
+    <!-- Action row: hint (practice only) + reference sheet (all modes) -->
+    <div class="quiz-action-row" id="quiz-action-row">
+      <button class="btn-hint" id="btn-hint" onclick="useHint()" title="Get a hint — costs your streak">💬 Hint</button>
+      <button class="btn-formula-quiz" onclick="openFormulaFromQuiz()">📖 Reference</button>
+    </div>
+
+    <!-- Hint box -->
+    <div class="hint-box" id="hint-box">
+      <div class="hint-label">💡 Hint</div>
+      <div class="hint-text" id="hint-text"></div>
+      <div class="streak-cost" id="streak-cost-msg"></div>
+    </div>
+
+    <div class="options-list" id="options-list"></div>
+    <div class="feedback-box" id="feedback-box">
+      <div class="feedback-header">
+        <div class="feedback-title" id="feedback-title"></div>
+        <button class="tts-btn" id="tts-exp-btn" onclick="speakExplanation()" title="Read explanation" style="display:none">🔊</button>
+      </div>
+      <div class="feedback-text" id="feedback-text"></div>
+    </div>
+    <button class="btn-next" id="btn-next" onclick="nextQuestion()">Next →</button>
+  </div>
+</div>
+
+<!-- ══ FLASHCARD ══════════════════════════════════════════ -->
+<div id="flashcard" class="screen">
+  <div class="quiz-header">
+    <span class="quiz-mode-badge flashcard">Flashcards</span>
+    <div class="quiz-progress-wrap">
+      <span class="quiz-counter" id="fc-counter">1 / 30</span>
+      <div class="progress-bar"><div class="progress-fill" id="fc-progress" style="width:0%;background:var(--purple)"></div></div>
+    </div>
+    <div class="quiz-right-info">
+      <span style="font-size:12px;color:var(--green);font-weight:700;" id="fc-knew-count">✓ 0</span>
+      <span style="font-size:12px;color:var(--red);font-weight:700;" id="fc-miss-count">✗ 0</span>
+      <button class="btn-back" style="margin:0;padding:6px 12px;" onclick="showScreen('mode-select')">✕</button>
+    </div>
+  </div>
+  <div class="flashcard-body">
+    <div class="fc-cat" id="fc-cat">Category</div>
+    <div class="fc-tap-hint" id="fc-hint">Tap card to reveal answer</div>
+    <div class="fc-card" id="fc-card" onclick="flipCard()">
+      <div class="fc-q" id="fc-q">Question</div>
+      <div class="fc-a" id="fc-a">Answer</div>
+    </div>
+    <div class="fc-actions" id="fc-actions" style="display:none">
+      <button class="fc-btn missed" onclick="fcAnswer(false)">✗ Missed It</button>
+      <button class="fc-btn knew" onclick="fcAnswer(true)">✓ Knew It</button>
+    </div>
+    <div style="display:flex;gap:10px;width:100%;margin-top:12px;" id="fc-before-actions">
+      <button class="btn-back" style="flex:1;text-align:center;" onclick="showScreen('mode-select')">Quit</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CODE & TERMS REFERENCE SHEET ═══════════════════════ -->
+<div id="formula-sheet" class="screen">
+  <div class="fs-header">
+    <button class="btn-back" style="margin:0;padding:6px 14px;" onclick="goBackFromFormula()">←</button>
+    <div class="fs-title">📖 Code & Terms Reference</div>
+  </div>
+  <div class="fs-body">
+
+    <!-- 1. FIRE SCIENCE FUNDAMENTALS -->
+    <div class="fs-section">
+      <div class="fs-section-title">1 · Fire Science Fundamentals</div>
+      <div class="fs-row"><span class="fs-formula">Fire Triangle</span><span class="fs-desc">Three things every fire needs: Heat + Fuel + Oxygen. Remove any one and the fire goes out — this is the basis of all extinguishing.</span></div>
+      <div class="fs-row"><span class="fs-formula">Fire Tetrahedron</span><span class="fs-desc">Adds a fourth element to the triangle: the uninhibited Chemical Chain Reaction. Modern extinguishers (dry chem, halon-replacements) work by breaking this reaction.</span></div>
+      <div class="fs-row"><span class="fs-formula">Stages of Fire</span><span class="fs-desc">Incipient (just ignited — an extinguisher can control it) → Growth (rollover stage) → Fully Developed (flashover stage, peak temps) → Decay/Burnout (backdraft risk).</span></div>
+      <div class="fs-row"><span class="fs-formula">Conduction</span><span class="fs-desc">Heat transfer through direct contact — fire spreads through a steel beam to the next room. Why fire-rated assemblies matter.</span></div>
+      <div class="fs-row"><span class="fs-formula">Convection</span><span class="fs-desc">Heat transfer through moving air/smoke — hot gases rise into stairwells, shafts, ceilings. The dominant method of spread in high-rises.</span></div>
+      <div class="fs-row"><span class="fs-formula">Radiation</span><span class="fs-desc">Heat transfer through electromagnetic waves — fire ignites materials across a room without touching them. Why "exposure protection" matters.</span></div>
+      <div class="fs-row"><span class="fs-formula">Rollover</span><span class="fs-desc">Ignited fire gases rise to the ceiling and spread horizontally — smoke appears to suddenly start burning. A warning sign: if not cooled/ventilated it leads to flashover.</span></div>
+      <div class="fs-row"><span class="fs-formula">Flashover</span><span class="fs-desc">The sudden, simultaneous ignition of everything in a room — the most dangerous stage. Temps soar to ~1,000°F in seconds; even a firefighter in full gear is unlikely to survive.</span></div>
+      <div class="fs-row"><span class="fs-formula">Backdraft</span><span class="fs-desc">Oxygen-starved fire explodes when a door/window suddenly admits air. Warning signs: dark smoke pulsing in/out, no visible flame, hot door.</span></div>
+      <div class="fs-row"><span class="fs-formula">Stack Effect</span><span class="fs-desc">High-rise chimney effect: warm interior air rises through stairs/shafts, pulling smoke up. Stronger in winter, makes upper floors smoke-fill fast.</span></div>
+      <div class="fs-row"><span class="fs-formula">4 Ways to Extinguish</span><span class="fs-desc">Remove fuel (isolate/burn out) · remove oxygen (smother/cover) · remove heat (cool with water) · break the chemical chain reaction (dry chemical agent).</span></div>
+    </div>
+
+    <!-- 2. FIRE PROTECTION SYSTEMS -->
+    <div class="fs-section">
+      <div class="fs-section-title">2 · Fire Protection Systems</div>
+      <div class="fs-row"><span class="fs-formula">Wet Pipe Sprinkler</span><span class="fs-desc">Pipes always filled with water. Most common. Heat melts the fusible link on a head → water discharges immediately from THAT head only.</span></div>
+      <div class="fs-row"><span class="fs-formula">Dry Pipe Sprinkler</span><span class="fs-desc">Pipes filled with pressurized air; water held back by a dry-pipe valve. Used in unheated areas (parking garages, attics) to prevent freezing.</span></div>
+      <div class="fs-row"><span class="fs-formula">Preaction Sprinkler</span><span class="fs-desc">Two-step: a detection signal opens the valve, THEN a sprinkler head must also fuse. Used where water damage must be avoided (data centers, museums).</span></div>
+      <div class="fs-row"><span class="fs-formula">Deluge System</span><span class="fs-desc">All heads are OPEN. When a detector trips, water floods every head simultaneously. Used in high-hazard areas (aircraft hangars, transformer rooms).</span></div>
+      <div class="fs-row"><span class="fs-formula">OS&Y Valve</span><span class="fs-desc">Outside Stem & Yoke — main control valve. Stem sticking OUT past the wheel = OPEN. Stem flush/IN with the wheel = CLOSED. FLSD checks this on the daily inspection.</span></div>
+      <div class="fs-row"><span class="fs-formula">PIV</span><span class="fs-desc">Post Indicator Valve — outdoor sprinkler control valve with an "OPEN/SHUT" window. Same function as OS&Y, different form factor.</span></div>
+      <div class="fs-row"><span class="fs-formula">Water Flow Switch</span><span class="fs-desc">Detects water moving in a sprinkler pipe and trips the alarm. Confirms an actual discharge, not just an electrical signal.</span></div>
+      <div class="fs-row"><span class="fs-formula">Tamper Switch</span><span class="fs-desc">Detects a sprinkler control valve being closed and sends a Supervisory signal to the FACP. Prevents a closed valve from going unnoticed.</span></div>
+      <div class="fs-row"><span class="fs-formula">Standpipe Class I</span><span class="fs-desc">For FDNY use only — 2.5" hose outlets. The standard in NYC office HRBs.</span></div>
+      <div class="fs-row"><span class="fs-formula">Standpipe Class II</span><span class="fs-desc">For occupant use — 1.5" hose with hose already attached. Largely phased out; occupants should evacuate, not fight fires.</span></div>
+      <div class="fs-row"><span class="fs-formula">Standpipe Class III</span><span class="fs-desc">Combination — both 2.5" (FDNY) and 1.5" (occupant) outlets at each floor.</span></div>
+      <div class="fs-row"><span class="fs-formula">Siamese Connection</span><span class="fs-desc">The dual-inlet fitting on the building exterior where FDNY pumpers boost water pressure into the standpipe/sprinkler system. Must stay unobstructed.</span></div>
+      <div class="fs-row"><span class="fs-formula">Annunciator Panel</span><span class="fs-desc">Display showing which zone/floor/device is in alarm. Found at the FCC and sometimes at building entrances for FDNY use.</span></div>
+      <div class="fs-row"><span class="fs-formula">Central Station</span><span class="fs-desc">FDNY-approved off-site service that receives the building's alarm signals and re-transmits to FDNY dispatch. Also notifies the FLSD of trouble/supervisory conditions.</span></div>
+      <div class="fs-row"><span class="fs-formula">6 Initiating Devices</span><span class="fs-desc">Per the manual: (a) smoke detectors (b) heat detectors (c) sprinkler water-flow devices (d) manual pull stations (e) carbon-monoxide detectors (f) flammable/combustible gas detectors.</span></div>
+      <div class="fs-row"><span class="fs-formula">Smoke vs Heat Detector</span><span class="fs-desc">Smoke detectors detect most fires faster (photoelectric or ionization). Heat detectors trip on high temp or rapid temp-rise — used where smoke detectors would false alarm.</span></div>
+      <div class="fs-row"><span class="fs-formula">Elevator-Lobby Smoke Det.</span><span class="fs-desc">When activated, automatically recalls elevators to the designated landing (Phase I). Duct smoke detectors shut down HVAC to stop smoke spread.</span></div>
+      <div class="fs-row"><span class="fs-formula">Single vs Double Pull</span><span class="fs-desc">Single-action pull = 1 step (pull). Double-action = 2 steps (e.g. push-in/lift then pull) to reduce accidental activation. FLSD must visually identify each. Located on each floor near exits — conspicuous, unobstructed, accessible.</span></div>
+      <div class="fs-row"><span class="fs-formula">Pull Reset First</span><span class="fs-desc">An activated pull station (or initiating device) must be reset BEFORE the main FACP can be reset. The FACP is only reset at the direction of an FDNY representative.</span></div>
+      <div class="fs-row"><span class="fs-formula">Rate-of-Rise Heat Det.</span><span class="fs-desc">Activates on a RAPID temperature increase. Does NOT require replacement after activating — it resets. More sensitive than fixed-temperature.</span></div>
+      <div class="fs-row"><span class="fs-formula">Fixed-Temp Heat Det.</span><span class="fs-desc">Component MELTS at a preset temperature to activate. Normally REQUIRES replacement after activating (some 'intelligent' ones reset). Most commonly used type.</span></div>
+      <div class="fs-row"><span class="fs-formula">Dummy Device = Unlawful</span><span class="fs-desc">It's unlawful to install anything shaped like fire equipment that doesn't do a fire-protection job — e.g. a hidden camera inside a fake smoke detector. It could be confused with real equipment.</span></div>
+      <div class="fs-row"><span class="fs-formula">Gas Detector Exception</span><span class="fs-desc">A flammable/combustible gas detector on the FACP gives a SUPERVISORY signal (no alarm sounds) — but FDNY IS notified to respond. Follow the plan until they arrive.</span></div>
+    </div>
+
+    <!-- 3. FLSD DUTIES -->
+    <div class="fs-section">
+      <div class="fs-section-title">3 · FLSD Duties & Responsibilities</div>
+      <div class="fs-row"><span class="fs-formula">Call 911 FIRST</span><span class="fs-desc">For any fire OR non-fire emergency, 911 is called FIRST. The FLSD calls 911 and states what part of the plan is being implemented. Occupants/staff also call 911 first, then notify the FLSD.</span></div>
+      <div class="fs-row"><span class="fs-formula">When FLSD Required</span><span class="fs-desc">Present during regular business hours AND when there are 500+ occupants, or 100+ occupants above/below street level. Can be relieved by the Deputy FLSD (both hold the F-89).</span></div>
+      <div class="fs-row"><span class="fs-formula">Daily FCC Inspection</span><span class="fs-desc">FDNY-recommended daily visual inspection of the Fire Command Center to detect defective components or abnormalities. Any defect found must be corrected. Industry standard practice.</span></div>
+      <div class="fs-row"><span class="fs-formula">Report to FCC</span><span class="fs-desc">On a fire, alarm activation, non-fire, or medical emergency the FLSD reports to the Fire Command Center. Only an FLSD C-of-F holder may operate the FACP during business hours.</span></div>
+      <div class="fs-row"><span class="fs-formula">Docs at the FCC</span><span class="fs-desc">The FDNY Plan, Floor Plans, and Building Information Card (BIC) must be kept at the Fire Command Center for responding firefighters.</span></div>
+      <div class="fs-row"><span class="fs-formula">Conduct Fire Drills</span><span class="fs-desc">FLSD conducts initial + refresher training and fire drills. EXCEPTION: drills may be run by a Fire Drill Conductor (W-07) under the FLSD's supervision. FLSD also selects brigade members.</span></div>
+      <div class="fs-row"><span class="fs-formula">Daily Warden Check</span><span class="fs-desc">FLSD does a daily check of the availability of FLS wardens / deputy wardens and makes notifications or temporary assignments to ensure adequate staffing.</span></div>
+      <div class="fs-row"><span class="fs-formula">Daily Fire-Prevention</span><span class="fs-desc">Check exits/stairs/halls clear (aisle ≥3 ft), self-closing doors not chocked, exit signs lit, no ignition sources, no rubbish buildup, no-smoking enforced.</span></div>
+      <div class="fs-row"><span class="fs-formula">Don Identification</span><span class="fs-desc">During the plan or drills, all FLS staff must identify themselves to occupants by donning a vest, armband, or other identifier of their role.</span></div>
+    </div>
+
+    <!-- 3b. FLS STAFF ROLES -->
+    <div class="fs-section">
+      <div class="fs-section-title">3b · FLS Staff Roles (Org Chart)</div>
+      <div class="fs-row"><span class="fs-formula">FLS Director (FLSD)</span><span class="fs-desc">Holds the F-89 C of F. Runs the Fire Command Center, implements the FDNY plan, trains and supervises all FLS staff. Present during business hours.</span></div>
+      <div class="fs-row"><span class="fs-formula">Deputy FLSD</span><span class="fs-desc">Also holds the F-89 C of F. Performs the FLSD's duties when the FLSD is absent (except the FLSD must personally supervise all staff training).</span></div>
+      <div class="fs-row"><span class="fs-formula">Bldg Evac Supervisor (BES)</span><span class="fs-desc">Office buildings only. Carries out FLSD duties after regular business hours when occupants remain. NOTE: the BES does NOT hold a C of F (unlike the FLSD/Deputy, who hold the F-89).</span></div>
+      <div class="fs-row"><span class="fs-formula">FLS Brigade</span><span class="fs-desc">Hotels & office buildings. On the fire floor they notify the FCC, then report to the floor below the fire to assist evacuation, control small fires, and meet firefighters. Cannot be the FLSD/Deputy.</span></div>
+      <div class="fs-row"><span class="fs-formula">FLS Warden</span><span class="fs-desc">Office buildings only. ONE per floor. Notifies the FLSD via warden phone, directs floor evacuation/relocation, confirms the floor is clear by visual inspection.</span></div>
+      <div class="fs-row"><span class="fs-formula">Deputy FLS Warden</span><span class="fs-desc">Office buildings. One per employer per floor, plus one for each 7,500 sq ft. Assists / covers the warden; searches all areas of the floor.</span></div>
+      <div class="fs-row"><span class="fs-formula">FLS Searcher</span><span class="fs-desc">Office buildings. At least one MALE and one FEMALE per employer per floor — so all restrooms and enclosed spaces can be searched.</span></div>
+      <div class="fs-row"><span class="fs-formula">Critical Ops Staff</span><span class="fs-desc">Office buildings. Personnel who stay to shut down or maintain critical operations/essential services before they shelter, relocate, or evacuate.</span></div>
+    </div>
+
+    <!-- 4. EAP -->
+    <div class="fs-section">
+      <div class="fs-section-title">4 · Emergency Action Plan (EAP)</div>
+      <div class="fs-row"><span class="fs-formula">4 EAP Actions</span><span class="fs-desc">The four non-fire emergency actions: (1) Shelter in Place (2) In-Building Relocation (3) Partial Evacuation (4) Full Evacuation. Know all four definitions.</span></div>
+      <div class="fs-row"><span class="fs-formula">In-Building Relocation</span><span class="fs-desc">Move occupants to a safe location in the SAME building at least THREE floors below their present location. Not evacuation to the street. Relocating up or to the roof increases danger.</span></div>
+      <div class="fs-row"><span class="fs-formula">Which Floors First</span><span class="fs-desc">Fire/alarm floor, the floor ABOVE, and the floor BELOW (if applicable) leave first → relocate ≥3 floors below. Then an all-call to the whole building.</span></div>
+      <div class="fs-row"><span class="fs-formula">Shelter in Place</span><span class="fs-desc">Occupants on floors with NO alarm activity generally stay put and don't move around the building, pending FLSD/FDNY direction. Keeps stairs clear.</span></div>
+      <div class="fs-row"><span class="fs-formula">Partial vs Full Evac</span><span class="fs-desc">Partial = some floors leave the building. Full = the entire building evacuates to the assembly area. Full evac is implemented only when conditions warrant.</span></div>
+      <div class="fs-row"><span class="fs-formula">Bomb Threat</span><span class="fs-desc">Call 911 immediately (NYPD-led). Document the call. Do NOT use a manual pull station. Follow NYPD direction on search vs. evacuation.</span></div>
+      <div class="fs-row"><span class="fs-formula">Active Shooter</span><span class="fs-desc">Run / Hide / Fight. Do NOT pull the fire alarm — it can send people into corridors/stairs when they should shelter in place.</span></div>
+      <div class="fs-row"><span class="fs-formula">Disabled Occupants</span><span class="fs-desc">Pre-identified in the FDNY plan. Designated brigade members assist them; move to the Area of Refuge to await FDNY rescue.</span></div>
+      <div class="fs-row"><span class="fs-formula">Trapped & Can't Exit</span><span class="fs-desc">Retreat to a room with a solid door, call 911, give your location, and seal gaps around the door (wet towels/duct tape) against smoke.</span></div>
+    </div>
+
+    <!-- 5. FDNY COMMUNICATIONS -->
+    <div class="fs-section">
+      <div class="fs-section-title">5 · FDNY Communications</div>
+      <div class="fs-row"><span class="fs-formula">Verbal Is Primary</span><span class="fs-desc">The primary method of communication during a fire emergency MUST be verbal. Text or email must not be the primary method — too slow and unreliable.</span></div>
+      <div class="fs-row"><span class="fs-formula">Notify Order</span><span class="fs-desc">Notify the affected floors FIRST — fire floor, floor above, floor below (if applicable) — then make an all-call announcement to the whole building.</span></div>
+      <div class="fs-row"><span class="fs-formula">Warden Phones</span><span class="fs-desc">Two-way phones between the FCC and each floor's warden station. Usually a SINGLE line — callers must wait for the FCC to answer; calls can't all be answered at once.</span></div>
+      <div class="fs-row"><span class="fs-formula">The 4 W's</span><span class="fs-desc">For non-fire announcements: What occurred · Where it occurred · What plan provisions (T.I.P.S.) will be implemented · Why occupants must follow the actions.</span></div>
+      <div class="fs-row"><span class="fs-formula">Calling 911</span><span class="fs-desc">Most critical info: nature of emergency + address. Also: occupancy type, callback number, fire location, whether the FDNY plan was implemented. Don't hang up until told.</span></div>
+      <div class="fs-row"><span class="fs-formula">On FDNY Arrival</span><span class="fs-desc">Notify firefighting personnel of the nature of the emergency and the response taken, and comply with their directions. Command transfers to FDNY.</span></div>
+    </div>
+
+    <!-- 6. BUILDING CONSTRUCTION -->
+    <div class="fs-section">
+      <div class="fs-section-title">6 · Building Construction & High-Rise</div>
+      <div class="fs-row"><span class="fs-formula">Fire-Rated Wall</span><span class="fs-desc">Wall rated to contain fire for a specified time (1-hr, 2-hr, 3-hr). Penetrations must be firestopped. Holes from cable installs = code violation.</span></div>
+      <div class="fs-row"><span class="fs-formula">Fire Door</span><span class="fs-desc">Self-closing, latching, rated door. Must NEVER be propped open. Common violation. Hold-opens must be magnetic and release on alarm.</span></div>
+      <div class="fs-row"><span class="fs-formula">Smokeproof Tower</span><span class="fs-desc">Stairwell with a vestibule/balcony at each floor — smoke can't enter the stair without crossing open air. Used in some older HRBs.</span></div>
+      <div class="fs-row"><span class="fs-formula">Stair Pressurization</span><span class="fs-desc">Fans pressurize the stairwell to keep smoke out. Activated automatically on alarm. Modern HRB equivalent of smokeproof tower.</span></div>
+      <div class="fs-row"><span class="fs-formula">Area of Refuge</span><span class="fs-desc">Protected location (rated stair landing or rated room) where disabled occupants wait for FDNY rescue. Usually has a two-way comm device.</span></div>
+      <div class="fs-row"><span class="fs-formula">Fire Command Center</span><span class="fs-desc">Principal location where alarm/communication/control status is displayed and managed. Located in the LOBBY on the main entrance floor near the FDNY response point.</span></div>
+      <div class="fs-row"><span class="fs-formula">Fire Tower</span><span class="fs-desc">A stairway with a vestibule/balcony giving extra smoke protection. Given PRIORITY for occupant evacuation/relocation when present.</span></div>
+      <div class="fs-row"><span class="fs-formula">Fail-Safe Device</span><span class="fs-desc">Electro-magnetic lock holding a stairway/corridor door. Note: a manual pull alarm may NOT release them automatically — the FLSD must manually release after confirming fire/smoke.</span></div>
+      <div class="fs-row"><span class="fs-formula">Stairway Reentry</span><span class="fs-desc">Locked stairway doors typically allow reentry every fourth floor and should unlock on alarm or power loss. Some pre-1968 buildings lock all but the street level.</span></div>
+      <div class="fs-row"><span class="fs-formula">Class J / Class E</span><span class="fs-desc">Older voice-comm building classes: Class-J (now R-1, hotels) and Class-E (now Group B, offices). 2008 code requires voice comm for most high-rises.</span></div>
+      <div class="fs-row"><span class="fs-formula">Vertical Spread</span><span class="fs-desc">Fire/smoke spreads UP through shafts, stairs, plenums, poke-throughs. Why floor-above evacuation is critical.</span></div>
+    </div>
+
+    <!-- 6b. TWO-WAY COMMUNICATION SYSTEMS -->
+    <div class="fs-section">
+      <div class="fs-section-title">6b · Two-Way Communication Systems</div>
+      <div class="fs-row"><span class="fs-formula">Warden Phones</span><span class="fs-desc">Used by BUILDING OCCUPANTS. Located near exit stairways on each floor; also installed in the FACP. Must communicate with the Fire Command Center. Used to issue instructions during a fire or non-fire emergency.</span></div>
+      <div class="fs-row"><span class="fs-formula">FCC Can't Call Floors</span><span class="fs-desc">The FCC cannot call individual warden phones. If the FLSD needs a floor, the FLSD makes an announcement instructing that floor warden to initiate contact (call in).</span></div>
+      <div class="fs-row"><span class="fs-formula">ARC System</span><span class="fs-desc">Auxiliary Radio Communication — used by FIREFIGHTERS, POLICE & emergency services. A wireless two-way system that receives & transmits FDNY portable radio frequencies inside the building.</span></div>
+      <div class="fs-row"><span class="fs-formula">ARC Out of Service</span><span class="fs-desc">The FDNY must be notified IMMEDIATELY if the ARC System is out of service, and an Out-of-Service tag placed at the Fire Command Center (or other approved location).</span></div>
+    </div>
+
+    <!-- 6c. ALARM-ACTIVATED BUILDING FEATURES -->
+    <div class="fs-section">
+      <div class="fs-section-title">6c · Alarm-Activated Building Features</div>
+      <div class="fs-row"><span class="fs-formula">Fire / Smoke Dampers</span><span class="fs-desc">Open and close to provide fresh air or to stop fire/smoke passage through ductwork.</span></div>
+      <div class="fs-row"><span class="fs-formula">Hold-Open Device</span><span class="fs-desc">Magnetic release that lets self-closing doors close automatically upon activation of the building's fire alarm system.</span></div>
+      <div class="fs-row"><span class="fs-formula">Elevator Recall</span><span class="fs-desc">Recalls elevators to the designated landing (usually the lobby) in the event of an alarm — triggered by elevator-lobby smoke detectors.</span></div>
+      <div class="fs-row"><span class="fs-formula">Fail-Safe Door Release</span><span class="fs-desc">Unlocks stairway/exit doors from the STAIR side so occupants can re-enter a floor. A manual pull may NOT release them automatically — FLSD may release manually after confirming fire/smoke.</span></div>
+      <div class="fs-row"><span class="fs-formula">HVAC Auto Shutdown</span><span class="fs-desc">Duct smoke detectors shut down the HVAC to stop smoke spreading. The FLSD may need to consult the building engineer for assistance.</span></div>
+    </div>
+
+    <!-- 7. NYC FIRE CODE -->
+    <div class="fs-section">
+      <div class="fs-section-title">7 · NYC Fire Code & Regulations</div>
+      <div class="fs-row"><span class="fs-formula">Occupancy: B</span><span class="fs-desc">Business — offices. The occupancy class F-89 covers. Daytime population, low fuel load, alert adult occupants.</span></div>
+      <div class="fs-row"><span class="fs-formula">Occupancy: A</span><span class="fs-desc">Assembly — 50+ people gathered (auditoriums, restaurants, conference centers). Higher exit and sprinkler requirements.</span></div>
+      <div class="fs-row"><span class="fs-formula">Occupancy: R</span><span class="fs-desc">Residential — hotels (R-1), apartments (R-2). Different CoF (T-89/F-89 hotel) applies; sleeping occupants change the strategy.</span></div>
+      <div class="fs-row"><span class="fs-formula">Office Sprinkler Rule</span><span class="fs-desc">By 07/01/2019, all NYC office buildings 100 ft or more in height had to be fully sprinklered throughout. New Group A and R-1 (hotel) buildings require sprinklers under the 2008 code.</span></div>
+      <div class="fs-row"><span class="fs-formula">Exit Aisle Width</span><span class="fs-desc">An exit aisle is generally required to be at least 3 feet wide and kept clear. Locks/bolts/chains must not be on exit doors while the building is in use.</span></div>
+      <div class="fs-row"><span class="fs-formula">Unwarranted Alarms</span><span class="fs-desc">1 is allowable. 2 or more in any 3-month period is unlawful: 1st = warning, 2nd = ticket (summons). Examples: testing without taking it offline, construction dust, shower steam, cigarette smoke.</span></div>
+      <div class="fs-row"><span class="fs-formula">Smoke Detector Cleaning</span><span class="fs-desc">When a smoke detector reports the need for maintenance to the FACP, it must be cleaned within 1 week (NFPA 72).</span></div>
+      <div class="fs-row"><span class="fs-formula">Record Retention</span><span class="fs-desc">Standpipe/sprinkler inspection, test, and maintenance records kept on premises a minimum of 3 years (FC 901.6.2 / NFPA 25).</span></div>
+      <div class="fs-row"><span class="fs-formula">Comprehensive Plan</span><span class="fs-desc">Every office HRB must have an FDNY-accepted Comprehensive Fire Safety & Emergency Action (Level 1) Plan. The FLSD implements it.</span></div>
+    </div>
+
+    <!-- 8. FLSD FIRST ACTIONS ON A FIRE ALARM -->
+    <div class="fs-section">
+      <div class="fs-section-title">8 · FLSD First Actions on a Fire Alarm</div>
+      <div class="fs-row"><span class="fs-formula">0 · 911 First</span><span class="fs-desc">Ensure 911 is called FIRST for any fire/non-fire emergency and state that the FDNY plan is being implemented. This overrides everything — even if auto-transmission fired.</span></div>
+      <div class="fs-row"><span class="fs-formula">1 · Report to FCC</span><span class="fs-desc">Immediately report to the Fire Command Center (or the designated alternate if the FCC is compromised).</span></div>
+      <div class="fs-row"><span class="fs-formula">2 · Acknowledge</span><span class="fs-desc">Acknowledge the alarm at the FACP (if applicable). This may identify the device or zone in alarm.</span></div>
+      <div class="fs-row"><span class="fs-formula">3 · Address the Panel</span><span class="fs-desc">Verify the location and which initiating device activated: pull station · smoke/beam/duct detector · heat detector · water-flow device.</span></div>
+      <div class="fs-row"><span class="fs-formula">4 · Recall Elevators</span><span class="fs-desc">Ensure all elevators are recalled (Phase I) so they don't carry occupants to the fire floor or trap them.</span></div>
+      <div class="fs-row"><span class="fs-formula">5 · Ensure 911 Called</span><span class="fs-desc">Confirm 911 has been called — never rely solely on automatic transmission. State that the FDNY plan is being implemented.</span></div>
+      <div class="fs-row"><span class="fs-formula">6 · Communicate w/ Staff</span><span class="fs-desc">Contact FLS wardens on the alarm floor(s) / direct brigade members to learn: fire location, severity, floors & stairways affected by smoke, occupant count.</span></div>
+      <div class="fs-row"><span class="fs-formula">7 · Identify Stairs</span><span class="fs-desc">Pick a stairway for occupant evacuation (fire tower first) and a separate one for firefighters. Ensure all fail-safe devices are released so doors open.</span></div>
+      <div class="fs-row"><span class="fs-formula">8 · Announce</span><span class="fs-desc">Notify the affected floors first (fire floor, above, below), instruct relocation ≥3 floors below via the designated stair, no elevators. Then all-call.</span></div>
+      <div class="fs-row"><span class="fs-formula">9 · Shelter Unaffected</span><span class="fs-desc">Instruct floors with no alarm activity to shelter in place and not move around the building, pending further direction.</span></div>
+      <div class="fs-row"><span class="fs-formula">10 · Monitor</span><span class="fs-desc">Monitor the FACP for fire progression and maintain regular communication with FLS staff until FDNY relieves you.</span></div>
+    </div>
+
+    <!-- 9. FCC OPERATIONS -->
+    <div class="fs-section">
+      <div class="fs-section-title">9 · Fire Command Center Operations</div>
+      <div class="fs-row"><span class="fs-formula">Alarm Signal</span><span class="fs-desc">A fire-initiating device activated (pull station, smoke/heat detector, water-flow). FACP sounds horns/strobes, signals the central station, and controls building functions. FDNY IS dispatched.</span></div>
+      <div class="fs-row"><span class="fs-formula">Supervisory Signal</span><span class="fs-desc">A fire-protection system is compromised — e.g. closed control valve (tamper switch), low air/water, gravity-tank temp/level, pump trouble. FLSD investigates & corrects. FDNY NOT dispatched — EXCEPTION: a flammable/combustible gas detector on the FACP gives a supervisory signal but FDNY IS notified.</span></div>
+      <div class="fs-row"><span class="fs-formula">Trouble Signal</span><span class="fs-desc">An electrical fault in the alarm system itself — battery, AC failure, ground fault, open/short circuit, phone-line failure. FLSD investigates & calls the contractor. FDNY is NOT dispatched.</span></div>
+      <div class="fs-row"><span class="fs-formula">Acknowledge (ACK)</span><span class="fs-desc">Acknowledges alarm/trouble/supervisory conditions; may identify the device or zone. Does NOT clear the condition.</span></div>
+      <div class="fs-row"><span class="fs-formula">Alarm Silence</span><span class="fs-desc">Silences building horns/strobes after evacuation while the source is investigated. Does NOT stop the signal going to the central station. Never silence until FDNY verifies.</span></div>
+      <div class="fs-row"><span class="fs-formula">System Reset</span><span class="fs-desc">Resets the panel after the condition is cleared. Won't reset to normal while an initiating device is still in alarm. Never reset until FDNY verifies. Fans usually need a separate restart.</span></div>
+      <div class="fs-row"><span class="fs-formula">Never Silence/Reset</span><span class="fs-desc">NEVER silence or reset the fire alarm until the condition is verified by FDNY firefighting personnel.</span></div>
+      <div class="fs-row"><span class="fs-formula">Lamp Test</span><span class="fs-desc">Lights up all panel LEDs to confirm they work. Part of the recommended daily visual inspection.</span></div>
+    </div>
+
+    <!-- 10. HUMAN BEHAVIOR -->
+    <div class="fs-section">
+      <div class="fs-section-title">10 · Human Behavior in Emergencies</div>
+      <div class="fs-row"><span class="fs-formula">Denial Phase</span><span class="fs-desc">Most occupants' first reaction is to disbelieve the alarm. They finish emails, gather belongings, hesitate. Clear, calm announcements override denial.</span></div>
+      <div class="fs-row"><span class="fs-formula">Crowd Flow</span><span class="fs-desc">People follow the leader and the crowd — not the signs. Trained Fire Wardens visibly directing the flow are more effective than any sign.</span></div>
+      <div class="fs-row"><span class="fs-formula">Bottlenecks</span><span class="fs-desc">Form at stair doors, lobby exits, and turns. Fire Wardens keep people moving, prevent stopping to look back, manage pace.</span></div>
+      <div class="fs-row"><span class="fs-formula">Panic Is Rare</span><span class="fs-desc">True panic is uncommon — most people are slow, not panicked. The real problem is delayed start, not chaos. Speed up the start.</span></div>
+      <div class="fs-row"><span class="fs-formula">Calm Voice</span><span class="fs-desc">FLSD announcements should be slow, clear, low-pitch, repeated. Urgency in the words; calm in the delivery. Panicked voice creates panic.</span></div>
+      <div class="fs-row"><span class="fs-formula">Familiar Routes</span><span class="fs-desc">People instinctively return to the way they came in — even if it's blocked. Drills train them to use the nearest exit instead.</span></div>
+      <div class="fs-row"><span class="fs-formula">Extinguisher Limits</span><span class="fs-desc">Portable extinguishers stop a SMALL fire from growing — they are NOT intended to fight large or spreading fires. If the door's hot or smoke is visible, don't enter; evacuate.</span></div>
+      <div class="fs-row"><span class="fs-formula">Fire Doubles / Minute</span><span class="fs-desc">In a non-sprinklered building, a fire can double in size every minute — why immediate response to an alarm is critical and hesitation is deadly.</span></div>
+    </div>
+
+    <!-- ── ESSENTIAL QUICK-REFERENCE GRID ────────────────── -->
+    <div class="fs-section">
+      <div class="fs-section-title">⚡ Quick-Reference Grid</div>
+
+      <div class="fs-mini-header">Extinguisher Classes — what each fights</div>
+      <div class="fs-prefix-grid">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">A</div><div class="fs-prefix-name">Ordinary</div><div class="fs-prefix-val">Wood, paper, cloth, trash, plastics</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">B</div><div class="fs-prefix-name">Flammable Liquids</div><div class="fs-prefix-val">Gasoline, oil, grease, solvents</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">C</div><div class="fs-prefix-name">Electrical</div><div class="fs-prefix-val">Energized wiring, panels, motors</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">D</div><div class="fs-prefix-name">Combustible Metals</div><div class="fs-prefix-val">Magnesium, sodium, titanium</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">K</div><div class="fs-prefix-name">Kitchen</div><div class="fs-prefix-val">Cooking oils, animal fats, deep fryers</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">ABC</div><div class="fs-prefix-name">Multi-Purpose</div><div class="fs-prefix-val">Dry chemical — most offices</div></div>
+      </div>
+
+      <div class="fs-mini-header">Extinguisher Use — PASS</div>
+      <div class="fs-prefix-grid">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">P</div><div class="fs-prefix-name">Pull</div><div class="fs-prefix-val">Pull the safety pin</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">A</div><div class="fs-prefix-name">Aim</div><div class="fs-prefix-val">Aim at the BASE of the fire</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">S</div><div class="fs-prefix-name">Squeeze</div><div class="fs-prefix-val">Squeeze the handle</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">S</div><div class="fs-prefix-name">Sweep</div><div class="fs-prefix-val">Sweep side to side at the base</div></div>
+      </div>
+
+      <div class="fs-mini-header">Fire Triangle / Tetrahedron</div>
+      <div class="fs-prefix-grid">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">🔥</div><div class="fs-prefix-name">Heat</div><div class="fs-prefix-val">Ignition energy — remove with cooling (water)</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">🪵</div><div class="fs-prefix-name">Fuel</div><div class="fs-prefix-val">Combustible material — remove by isolation</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">💨</div><div class="fs-prefix-name">Oxygen</div><div class="fs-prefix-val">~16% min to sustain — smother to remove</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">⚛️</div><div class="fs-prefix-name">Chain Rxn</div><div class="fs-prefix-val">Tetrahedron's 4th — broken by dry chem / halon</div></div>
+      </div>
+
+      <div class="fs-mini-header">Heat Transfer — the 3 methods</div>
+      <div class="fs-prefix-grid">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Cond.</div><div class="fs-prefix-name">Conduction</div><div class="fs-prefix-val">Direct contact — through steel, pipes, walls</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Conv.</div><div class="fs-prefix-name">Convection</div><div class="fs-prefix-val">Moving air/smoke — up shafts & stairs (dominant in HRBs)</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Rad.</div><div class="fs-prefix-name">Radiation</div><div class="fs-prefix-val">EM waves — ignites across a gap without contact</div></div>
+      </div>
+
+      <div class="fs-mini-header">Stages of Fire</div>
+      <div class="fs-prefix-grid">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">1</div><div class="fs-prefix-name">Incipient</div><div class="fs-prefix-val">Just ignited — small, controllable with extinguisher</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">2</div><div class="fs-prefix-name">Growth</div><div class="fs-prefix-val">Spreading — sprinklers should activate here</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">3</div><div class="fs-prefix-name">Fully Dev.</div><div class="fs-prefix-val">Peak heat — flashover risk; FDNY operation</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">4</div><div class="fs-prefix-name">Decay</div><div class="fs-prefix-val">Fuel depleted — backdraft risk if oxygen reintroduced</div></div>
+      </div>
+
+      <div class="fs-mini-header">Smoke Reading — what color tells you</div>
+      <div class="fs-prefix-grid">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">⚫</div><div class="fs-prefix-name">Black</div><div class="fs-prefix-val">Oil, plastics, synthetics — hot, fuel-rich</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">⚪</div><div class="fs-prefix-name">White</div><div class="fs-prefix-val">Mostly steam/moisture — early stage or wet fuel</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">🟤</div><div class="fs-prefix-name">Brown/Yellow</div><div class="fs-prefix-val">Decomposing wood — pre-flashover warning</div></div>
+      </div>
+
+      <div class="fs-mini-header">Standpipe & Sprinkler Quick-Lookup</div>
+      <div class="fs-prefix-grid">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Cl. I</div><div class="fs-prefix-name">Standpipe</div><div class="fs-prefix-val">2.5" — FDNY only</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Cl. II</div><div class="fs-prefix-name">Standpipe</div><div class="fs-prefix-val">1.5" — occupant use</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Cl. III</div><div class="fs-prefix-name">Standpipe</div><div class="fs-prefix-val">Both — combined</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Wet</div><div class="fs-prefix-name">Sprinkler</div><div class="fs-prefix-val">Water in pipes — most common</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Dry</div><div class="fs-prefix-name">Sprinkler</div><div class="fs-prefix-val">Air in pipes — freeze zones</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Deluge</div><div class="fs-prefix-name">Sprinkler</div><div class="fs-prefix-val">All heads open — high hazard</div></div>
+      </div>
+
+      <div class="fs-mini-header">Essential Fire-Safety Numbers</div>
+      <div class="fs-prefix-grid">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">75 ft</div><div class="fs-prefix-name">High-Rise</div><div class="fs-prefix-val">Triggers standpipe & HRB requirements</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">100 ft</div><div class="fs-prefix-name">Office Sprinkler</div><div class="fs-prefix-val">Offices 100ft+ fully sprinklered by 7/1/2019</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">≥ 3</div><div class="fs-prefix-name">Relocate</div><div class="fs-prefix-val">Floors below present location, minimum</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">3 ft</div><div class="fs-prefix-name">Exit Aisle</div><div class="fs-prefix-val">Minimum aisle width, kept clear</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">7,500</div><div class="fs-prefix-name">Sq Ft</div><div class="fs-prefix-val">Per deputy warden (office buildings)</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">1,000°F</div><div class="fs-prefix-name">Flashover</div><div class="fs-prefix-val">Approx room temp at flashover (~seconds)</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">2 / 3mo</div><div class="fs-prefix-name">Bad Alarms</div><div class="fs-prefix-val">2+ unwarranted in 3 months = FDNY summons</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">1 wk</div><div class="fs-prefix-name">Clean Det.</div><div class="fs-prefix-val">Clean smoke detector w/in 1 week of trouble</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">911</div><div class="fs-prefix-name">First Call</div><div class="fs-prefix-val">Always — even if auto-transmission active</div></div>
+      </div>
+
+      <div class="fs-mini-header">FACP Signals — does FDNY respond?</div>
+      <div class="fs-prefix-grid">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Alarm</div><div class="fs-prefix-name">Fire device</div><div class="fs-prefix-val">FDNY responds ✓</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Supv.</div><div class="fs-prefix-name">System compromised</div><div class="fs-prefix-val">FDNY does NOT respond ✗ (exception: gas detector)</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Trouble</div><div class="fs-prefix-name">Electrical fault</div><div class="fs-prefix-val">FDNY does NOT respond ✗</div></div>
+      </div>
+
+      <div class="fs-mini-header">Pull Stations — single vs double action</div>
+      <div class="fs-prefix-grid wide">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Single</div><div class="fs-prefix-name">1 action</div><div class="fs-prefix-val">Pull only</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Double</div><div class="fs-prefix-name">2 actions</div><div class="fs-prefix-val">Push-in/lift, then pull</div></div>
+      </div>
+
+      <div class="fs-mini-header">Heat Detectors — reset or replace?</div>
+      <div class="fs-prefix-grid wide">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Rate-of-Rise</div><div class="fs-prefix-name">Rapid temp climb</div><div class="fs-prefix-val">Resets — no replacement needed</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Fixed-Temp</div><div class="fs-prefix-name">Melts at preset temp</div><div class="fs-prefix-val">Usually requires replacement</div></div>
+      </div>
+
+      <div class="fs-mini-header">Two-Way Comms — who uses what</div>
+      <div class="fs-prefix-grid wide">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Warden Phone</div><div class="fs-prefix-name">Occupants</div><div class="fs-prefix-val">Floor ↔ Fire Command Center</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">ARC System</div><div class="fs-prefix-name">FDNY / Police</div><div class="fs-prefix-val">Wireless radio inside the building</div></div>
+      </div>
+
+      <div class="fs-mini-header">The 4 W's — Non-Fire Announcements</div>
+      <div class="fs-prefix-grid wide">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">What</div><div class="fs-prefix-name">Occurred</div><div class="fs-prefix-val">What has happened?</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Where</div><div class="fs-prefix-name">Located</div><div class="fs-prefix-val">Where did it occur?</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">What</div><div class="fs-prefix-name">Plan (T.I.P.S.)</div><div class="fs-prefix-val">What plan provisions will be implemented?</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">Why</div><div class="fs-prefix-name">Necessary</div><div class="fs-prefix-val">Why follow these actions?</div></div>
+      </div>
+
+      <div class="fs-mini-header">4 EAP Actions (Non-Fire)</div>
+      <div class="fs-prefix-grid wide">
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">1</div><div class="fs-prefix-name">Shelter in Place</div><div class="fs-prefix-val">Stay put — leaving is more dangerous</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">2</div><div class="fs-prefix-name">In-Building Reloc.</div><div class="fs-prefix-val">Move ≥3 floors below within the building</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">3</div><div class="fs-prefix-name">Partial Evac</div><div class="fs-prefix-val">Some floors leave the building</div></div>
+        <div class="fs-prefix-card"><div class="fs-prefix-sym">4</div><div class="fs-prefix-name">Full Evac</div><div class="fs-prefix-val">Entire building to the assembly area</div></div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ RESULTS ════════════════════════════════════════════ -->
+<div id="results" class="screen">
+  <div class="results-header">
+    <div class="results-score-ring" id="score-ring">
+      <div class="score-fraction" id="score-fraction">0/10</div>
+      <div class="score-pct" id="score-pct">0%</div>
+    </div>
+    <div class="results-verdict" id="results-verdict">Results</div>
+    <div class="results-sub" id="results-sub"></div>
+  </div>
+  <div class="category-breakdown">
+    <div class="breakdown-title">Category Breakdown</div>
+    <div id="breakdown-rows"></div>
+  </div>
+  <div class="results-actions">
+    <button class="btn-review" onclick="showReview('wrong')">📋 Review Wrong Answers</button>
+    <button class="btn-review" onclick="showReview('flagged')" id="btn-flagged" style="display:none">🚩 Flagged Questions</button>
+    <button class="btn-review" onclick="showScreen('formula-sheet')" id="fs-from-results">📖 Open Reference Sheet</button>
+    <button class="btn-home-res" onclick="showScreen('home')">🔥 Back to Home</button>
+  </div>
+</div>
+
+<!-- ══ REVIEW ═════════════════════════════════════════════ -->
+<div id="review" class="screen">
+  <div class="review-header">
+    <button class="btn-back" onclick="showScreen('results')" style="margin:0;padding:7px 14px;">←</button>
+    <div class="review-title" id="review-title">Wrong Answers</div>
+  </div>
+  <div class="review-body" id="review-body"></div>
+</div>
+
+<!-- ══ TAP OUT MODAL ══════════════════════════════════════ -->
+<div id="tapout-modal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <div class="modal-icon">✋</div>
+    <div class="modal-title">Tap Out?</div>
+    <div class="modal-desc">You've answered <span id="tapout-count">0</span> questions. End now and see your results?</div>
+    <div class="modal-actions">
+      <button class="modal-btn-confirm" onclick="confirmTapOut()">Yes, Show Results</button>
+      <button class="modal-btn-cancel" onclick="closeTapOut()">Keep Going</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════════
+// QUESTION BANK — F-89 Fire & Life Safety Director (starter set)
+// ══════════════════════════════════════════════════════════════════
+// Passage groups: { passageId, passageTitle, passageText } on related questions
+const PASSAGES = {
+  p1: {
+    title: "Fire Command Center Procedures",
+    text: "Upon a fire alarm, the Fire & Life Safety Director (FLSD) must immediately report to the Fire Command Center (FCC), located in the lobby of the building on the main entrance floor. The FLSD acknowledges the alarm at the Fire Alarm Control Panel (FACP), then addresses the panel to verify the location and which initiating device activated — manual pull station, smoke/beam/duct detector, heat detector, or water-flow device. The FLSD ensures all elevators are recalled and that 911 has been called. The FLSD then communicates verbally with FLS staff — contacting the FLS wardens on the affected floor(s) or directing FLS brigade members — to determine the location and severity of the fire, the floors and stairways affected by smoke, and the number of occupants present. The primary communication must be made verbally; text or email must not be the primary method during a fire emergency. When firefighting personnel arrive, the FLSD notifies them of the nature of the emergency and the response taken, and complies with their directions. Command transfers to the FDNY upon arrival; the FLSD continues to operate the FCC in support of FDNY operations."
+  },
+  p2: {
+    title: "Evacuation & Relocation Strategy",
+    text: "In a modern non-combustible high-rise, total simultaneous evacuation is neither necessary nor desirable. These buildings are designed to contain a fire to its area of origin. The standard initial response is to instruct occupants on the fire floor, the floor above, and the floor below (if applicable) to immediately leave those floors and relocate to a safe location within the same building at least three floors below their present location, or to evacuate consistent with the FDNY plan. Occupants are directed to use only the designated stairway and to close stairway doors behind them. Occupants on floors with no fire alarm activity are generally instructed to shelter in place and not move around the building, pending further direction from the FLSD or firefighting personnel. A full building evacuation is implemented only when conditions warrant. Elevators are recalled and are not used by occupants unless directed by firefighting personnel; everyone moves via the stairs. The FLSD notifies the affected floors first, then makes an all-call announcement to the entire building."
+  },
+  p3: {
+    title: "FLS Warden Duties",
+    text: "One FLS warden is required for each floor of an office building, on duty during that floor's regular business hours. In the event of a fire or non-fire emergency on the floor, the warden notifies the FLSD through the warden phone and notifies occupants on the floor, then initiates appropriate action. If the emergency is not on the floor, the warden establishes communication with the FLSD and, if possible, awaits direction. The warden confirms the in-building relocation or evacuation of the floor by directing deputy FLS wardens and FLS searchers to search all areas of the floor — and to do so by visual inspection, not merely by the lack of a voice response. The warden determines whether the stairways are safe to enter before directing occupants to use them, and if unsafe, notifies the FLSD. The warden instructs occupants not to use elevators in the event of fire. The warden keeps the FLSD informed of his or her location and the progress of the plan. A deputy FLS warden performs the warden's duties in the warden's absence."
+  }
+};
+
+const QUESTIONS = [
+  // ══ 1. FIRE SCIENCE FUNDAMENTALS ══════════════════════════════
+  {id:1,cat:"Fire Science",hint:"Three things every fire needs. The manual calls them fuel, heat, and an oxidizing agent.",q:"The three components of the fire triangle are:",opts:["Heat, fuel, and water","Fuel, heat, and an oxidizing agent","Smoke, heat, and flame","Oxygen, ignition, and time"],ans:1,exp:"The fire triangle = fuel (something that will burn) + heat (enough to make it burn) + an oxidizing agent (air/oxygen). Remove any one and the fire goes out."},
+  {id:2,cat:"Fire Science",hint:"The tetrahedron adds a fourth element beyond the triangle — it's the chemistry, not a physical ingredient.",q:"The fire tetrahedron adds which fourth element to the fire triangle?",opts:["Smoke","An uninhibited chemical chain reaction","Pressure","Wind"],ans:1,exp:"The tetrahedron adds the uninhibited chemical chain reaction. Fire is a rapid oxidation process — a chemical chain reaction producing light and heat (NFPA 921). Dry chemical agents work by breaking this reaction."},
+  {id:3,cat:"Fire Science",hint:"The manual lists FOUR ways to extinguish a fire. Covering the flame removes which element?",q:"Covering a flame completely (e.g., a lid on a pot) extinguishes the fire by:",opts:["Removing the fuel","Removing the oxygen","Removing the heat","Adding water"],ans:1,exp:"The four ways to extinguish: remove fuel, remove oxygen (smother/cover), remove heat (cool with water), or break the chemical chain reaction (dry chem). Covering the flame removes the oxygen."},
+  {id:4,cat:"Fire Science",hint:"Applying water to a fire primarily removes which element of the tetrahedron?",q:"Applying water to a burning material extinguishes fire primarily by:",opts:["Removing the fuel","Removing the oxygen","Cooling — removing the heat","Breaking the chain reaction"],ans:2,exp:"Water cools the burning material, removing heat. (Dry chemical agents break the chain reaction; covering removes oxygen; isolation removes fuel.)"},
+  {id:5,cat:"Fire Science",hint:"Four stages in order. The first one — small, controllable with an extinguisher — is called what?",q:"The four stages of fire, in order, are:",opts:["Growth, incipient, decay, fully developed","Incipient, growth, fully developed, decay","Ignition, flashover, backdraft, burnout","Incipient, flashover, growth, decay"],ans:1,exp:"Stages of fire: 1) Incipient (just ignited — a fire extinguisher can control it), 2) Growth (rollover stage), 3) Fully developed (flashover stage, peak temps), 4) Decay/burnout (backdraft risk)."},
+  {id:6,cat:"Fire Science",hint:"An entire room ignites at once. Most dangerous stage. Reaches around 1,000°F in seconds.",q:"The sudden, simultaneous ignition of everything in a room — the most dangerous stage of fire development — is called:",opts:["Backdraft","Rollover","Flashover","Convection"],ans:2,exp:"Flashover: hot gases at the ceiling radiate heat downward until all combustibles reach ignition temp and burst into flame at once. Temperatures soar to ~1,000°F in seconds; even a firefighter in full gear is unlikely to survive."},
+  {id:7,cat:"Fire Science",hint:"Oxygen-starved smoldering fire + a sudden opening = explosion. Building may look like it's 'breathing'.",q:"An explosion that occurs when oxygen is suddenly introduced into a room full of hot smoldering gases is called:",opts:["Flashover","Rollover","Backdraft","Conduction"],ans:2,exp:"Backdraft: a confined fire consumes its oxygen, flames disappear, hot gases accumulate, and pressure pulses against doors/windows (the building seems to 'breathe'). When an opening admits oxygen, the gases explode in a rolling fireball."},
+  {id:8,cat:"Fire Science",hint:"Ignited gases rise to the ceiling and spread horizontally — smoke appears to suddenly start burning. This precedes flashover.",q:"Rollover (flameover) occurs when:",opts:["A room explodes from new oxygen","Ignited fire gases rise to the ceiling and spread horizontally","All sprinklers activate at once","The fire runs out of fuel"],ans:1,exp:"Rollover (flameover): ignited or incompletely burned fire gases rise to the ceiling and spread out horizontally — smoke appears to suddenly start burning. If not cooled or ventilated, rollover leads to flashover."},
+  {id:9,cat:"Fire Science",hint:"Heat through direct contact — a burning wastebasket heats the couch next to it. What's this called?",q:"Heat transfer through direct contact between materials is called:",opts:["Convection","Conduction","Radiation","Combustion"],ans:1,exp:"Conduction: passage of heat energy through or within a material by direct contact — e.g., a burning wastebasket heating a nearby couch until it ignites."},
+  {id:10,cat:"Fire Science",hint:"Hot gases rise, cool air descends. This is the dominant spread method in high-rises — up shafts and stairwells.",q:"The flow of heated gas rising from hot areas to cooler areas is called:",opts:["Conduction","Convection","Radiation","Ignition"],ans:1,exp:"Convection: heated air is less dense and rises while cooler air descends. Inside a building, rising gases hit the ceiling and spread horizontally. This drives smoke up shafts and stairwells in high-rises."},
+  {id:11,cat:"Fire Science",hint:"Heat via electromagnetic waves — travels in all directions, can pass through glass and ignite objects inside.",q:"Heat traveling via electromagnetic waves, without objects or gases carrying it, is called:",opts:["Conduction","Convection","Radiation","Combustion"],ans:2,exp:"Radiation: heat travels via electromagnetic waves in all directions, unnoticed until it strikes an object. Burning buildings can radiate heat to nearby structures, even through glass windows."},
+
+  // ══ 2. FIRE PROTECTION SYSTEMS ════════════════════════════════
+  {id:12,cat:"Fire Protection Systems",hint:"Only the heads where heat is high enough open. The manual says ~96% of fires are controlled by sprinklers.",q:"In an automatic wet sprinkler system, which heads discharge water during a fire?",opts:["All heads on the floor","All heads in the building","Only the heads activated (fused) by heat","Only the head nearest the riser"],ans:2,exp:"Each head is held closed by a heat-sensitive element. Only heads where the temperature rises enough will fuse and discharge. Not all heads activate — only those over the fire. About 96% of fires are extinguished or controlled where sprinklers are installed."},
+  {id:13,cat:"Fire Protection Systems",hint:"Most common system in an occupied high-rise. Pipes always have water under pressure.",q:"The most common sprinkler system in an occupied high-rise building is the:",opts:["Dry pipe system","Preaction system","Automatic wet sprinkler system","Deluge system"],ans:2,exp:"The automatic wet sprinkler system always has pressurized water in the piping and is the most common in occupied, heated high-rises. It discharges as soon as a head is fused by heat."},
+  {id:14,cat:"Fire Protection Systems",hint:"Pipes hold pressurized air, not water — used in unheated spaces to prevent freezing.",q:"A dry pipe sprinkler system is used where:",opts:["Water damage must be prevented","Freezing is a risk (unheated areas)","The building is very tall","There is no central station"],ans:1,exp:"A dry pipe system holds pressurized air in the piping; a dry pipe valve holds back the water. When a head fuses, air escapes, the valve trips, and water flows. Used in unheated areas (garages, loading docks) to prevent freezing."},
+  {id:15,cat:"Fire Protection Systems",hint:"Two-step system — a detection device must trip the valve AND a head must fuse. Protects against accidental water damage.",q:"A preaction sprinkler system requires:",opts:["Only a fused head","Only a detection signal","Both a fire-detection signal AND a fused head","Manual activation only"],ans:2,exp:"A preaction valve is tripped by a fire-detection device (smoke/heat detector). Water only fills the pipes after the valve opens, and discharges only when a head also fuses. This double requirement protects spaces where accidental water damage would be costly."},
+  {id:16,cat:"Fire Protection Systems",hint:"The main control valve. Stem sticking OUT means open; stem flush/IN means closed.",q:"On an OS&Y (Outside Stem & Yoke) valve, the valve is OPEN when the stem is:",opts:["Flush (in) with the control wheel","Sticking out past the control wheel","Removed entirely","Painted red"],ans:1,exp:"OS&Y = Outside Stem & Yoke. When the stem protrudes OUT past the control wheel, the valve is OPEN. When the stem is flush (IN) with the wheel, it's CLOSED. The FLSD checks this on the daily visual inspection."},
+  {id:17,cat:"Fire Protection Systems",hint:"Buildings over this height require a standpipe system per the NYC Building Code. The number is in feet.",q:"Standpipe systems are generally required in NYC buildings more than:",opts:["35 feet in height","50 feet in height","75 feet in height","150 feet in height"],ans:2,exp:"Per the NYC Building Code, standpipe systems are required in buildings more than 75 feet in height. Standpipes let firefighters deploy attack hose lines on upper floors with adequate water pressure and volume."},
+  {id:18,cat:"Fire Protection Systems",hint:"Vertical piping that carries water up to hose connections on each floor for firefighting.",q:"The vertical piping of a standpipe system that delivers water to each floor is called the:",opts:["Main","Riser","Header","Branch line"],ans:1,exp:"The riser is the vertical portion of standpipe/sprinkler piping, usually located in stairwell enclosures or hallways, supplying water to every floor. Hose connections branch off the riser."},
+  {id:19,cat:"Fire Protection Systems",hint:"The exterior dual-inlet fitting where FDNY pumpers boost water into the system. Must stay clear.",q:"The Fire Department Connection (FDC / Siamese) serves to:",opts:["Drain the sprinkler system","Let FDNY pumpers supply water/pressure into the standpipe or sprinkler system","Test the alarm panel","Recall the elevators"],ans:1,exp:"The FDC (often a Siamese dual-inlet) on the building exterior lets FDNY pumpers boost water into the standpipe/sprinkler system — a secondary water supply. It must be kept unobstructed."},
+  {id:20,cat:"Fire Protection Systems",hint:"Detects water actually moving in a sprinkler pipe and sends an alarm. Confirms a real discharge.",q:"A water-flow switch (water-flow alarm-initiating device):",opts:["Detects smoke","Detects water moving in a sprinkler pipe and sends an alarm signal","Recalls elevators","Pressurizes the stairwell"],ans:1,exp:"A vane/paddle in the pipe triggers a switch when water flows, sending an alarm to the FACP. This confirms an actual sprinkler discharge, not merely an electrical fault."},
+  {id:21,cat:"Fire Protection Systems",hint:"A gravity tank delivers water using what — no pump needed?",q:"A gravity tank supplies water to the standpipe/sprinkler system using:",opts:["An electric fire pump","The force of gravity (its elevation)","City main pressure only","Compressed air"],ans:1,exp:"A gravity tank delivers water without a pump — the energy comes from the tank's height (gravity). It serves as a primary or secondary supply. Fill pumps keep it topped off; floats control the level."},
+
+  // ══ 3. FLSD DUTIES & RESPONSIBILITIES ═════════════════════════
+  {id:22,cat:"FLSD Duties",hint:"Who must be present in the building during all regular business hours? And who covers when they're absent?",q:"When the FLS Director is absent during regular business hours, who must be present and perform the FLSD's duties?",opts:["The building owner","A Deputy FLS Director","The fire alarm contractor","Any security guard"],ans:1,exp:"A Deputy FLS Director (who also holds an FLS Director C of F) must be present and perform the FLSD's duties when the FLSD is absent during regular business hours."},
+  {id:23,cat:"FLSD Duties",hint:"This daily practice on the Fire Command Center is 'highly recommended' and 'industry practice' per the manual.",q:"How often does the FDNY recommend the FLS Director perform a visual inspection of the Fire Command Center?",opts:["Weekly","Monthly","Daily","Annually"],ans:2,exp:"Daily visual inspection of the Fire Command Center is industry practice and highly recommended by the FDNY. Its purpose is to detect defective components or abnormalities; any defect found must be corrected."},
+  {id:24,cat:"FLSD Duties",hint:"Only one type of certificate-holder may operate the fire alarm panel during business hours.",q:"During business hours, who is allowed to operate and address alarms at the Fire Alarm Control Panel?",opts:["Any building employee","Only a person holding an FLS Director C of F","The security desk","The cleaning staff"],ans:1,exp:"Only persons holding an FLS Director Certificate of Fitness are allowed to operate the FACP and address alarms/signals during business hours."},
+  {id:25,cat:"FLSD Duties",hint:"When does the FLSD report any fire or non-fire emergency to 911 — and any decision to implement the plan?",q:"When must the FLS Director report an emergency to 911?",opts:["After investigating fully","Immediately","Only if FDNY hasn't been auto-notified","At the next inspection"],ans:1,exp:"The FLS Director must immediately report to 911 any fire or non-fire emergency, and any determination to implement the FDNY plan."},
+  {id:26,cat:"FLSD Duties",hint:"This staff member is required ONLY in office buildings and covers FLSD authority when the FLSD isn't required on duty but occupants remain.",q:"The FLS Building Evacuation Supervisor is required in which occupancy and acts when:",opts:["Hotels; during fires only","Office buildings; when an FLSD is not required on duty but occupants are present","All buildings; at all times","Residential; overnight only"],ans:1,exp:"The FLS Building Evacuation Supervisor is required only in office buildings. They exercise the FLSD's authority to implement the FDNY plan whenever an FLSD is not required to be on duty but occupants remain in the building."},
+  {id:27,cat:"FLSD Duties",hint:"How many FLS wardens are required per floor in an office building?",q:"In an office building, how many FLS wardens are required for each floor?",opts:["One per floor","Two per floor","One per 7,500 sq ft","One per employer"],ans:0,exp:"One FLS warden is required for each floor of an office building, on duty during that floor's regular business hours. (Deputy wardens are required per employer / per 7,500 sq ft.)"},
+  {id:28,cat:"FLSD Duties",hint:"Searchers come in a specific pairing for each employer on a floor — think restrooms.",q:"For each employer of building occupants on a floor, the minimum FLS searchers required are:",opts:["One searcher","One male and one female searcher","Two male searchers","Four searchers"],ans:1,exp:"At least one male and one female FLS searcher are required for each employer of building occupants on a floor — so all restrooms and enclosed spaces can be searched. Required only in office buildings."},
+  {id:29,cat:"FLSD Duties",hint:"A deputy FLS warden is needed for each employer, plus one more for every how many square feet?",q:"A deputy FLS warden must be designated for each employer on a floor, plus one for each:",opts:["1,000 sq ft","2,500 sq ft","7,500 sq ft","10,000 sq ft"],ans:2,exp:"At least one deputy FLS warden per employer per floor; if an employer's floor area exceeds 7,500 sq ft, one deputy warden is required for each 7,500 sq ft (or portion). No deputy warden covers more than 7,500 sq ft."},
+  {id:30,cat:"FLSD Duties",hint:"FLS staff must identify themselves to occupants during the plan or drills by wearing something.",q:"During implementation of the FDNY plan or drills, FLS staff must identify themselves to occupants by:",opts:["Showing a badge only","Donning a vest, armband, or other identifying item","Announcing their name","Wearing a uniform"],ans:1,exp:"FLS staff must don a vest, armband, or other form of identification indicating their role so building occupants and others can recognize them."},
+
+  // ══ 4. EMERGENCY ACTION PLAN ══════════════════════════════════
+  {id:31,cat:"EAP",hint:"The course is specific: occupants relocate to at least how many floors below their present location?",q:"During an in-building relocation, occupants are instructed to relocate to a safe location at least how many floors below their present location?",opts:["One floor below","Two floors below","Three floors below","Five floors below"],ans:2,exp:"Per the course, occupants on affected floors relocate to a safe location within the building at least THREE floors below their present location (unless directed otherwise or per the FDNY plan). Relocating up or to the roof increases danger."},
+  {id:32,cat:"EAP",hint:"On a fire alarm, which floors does the FLSD instruct to leave immediately?",q:"On a confirmed fire alarm, the FLSD first instructs which floors to leave immediately?",opts:["The entire building","The fire floor only","The fire floor, the floor above, and the floor below (if applicable)","Only floors below the fire"],ans:2,exp:"The FLSD instructs occupants on the fire (alarm) floor, the floor above, and the floor below (if applicable) to immediately leave and relocate at least 3 floors below — then makes an all-call to the rest of the building."},
+  {id:33,cat:"EAP",hint:"For floors with NO alarm activity, what are occupants generally told to do?",q:"Occupants on floors with no fire alarm activity are generally instructed to:",opts:["Evacuate immediately","Move to the roof","Shelter in place and not move around the building","Use the elevators"],ans:2,exp:"Unless conditions warrant otherwise, occupants on unaffected floors are told to shelter in place and not move around the building, pending direction from the FLSD or firefighting personnel. This keeps stairwells clear for evacuation and FDNY."},
+  {id:34,cat:"EAP",hint:"These are the FOUR non-fire (EAP) emergency actions. Shelter in place, in-building relocation, and two kinds of evacuation.",q:"The four non-fire emergency (EAP) actions are shelter in place, in-building relocation, and:",opts:["Full and partial evacuation","Lockdown and lockout","Run and hide","Recall and reset"],ans:0,exp:"The four EAP actions: shelter in place, in-building relocation, partial evacuation, and full evacuation. The FLSD must know all four definitions and train staff on them."},
+  {id:35,cat:"EAP",hint:"The '4 W's' staff are trained to cover when making a non-fire emergency announcement. What / Where / What provisions / ___?",q:"The '4 W's' for non-fire emergency announcements are: What has occurred, Where it occurred, What plan provisions will be implemented, and:",opts:["Who is in charge","Why occupants are being instructed to follow the actions","When to return","Which exit to use"],ans:1,exp:"The 4 W's: What has occurred, Where it occurred, What provisions of the plan will be implemented (T.I.P.S.), and Why occupants are being instructed to follow the non-fire emergency actions (explain why the actions are necessary)."},
+  {id:36,cat:"EAP",hint:"A mobility-impaired occupant who can't use stairs is moved to a protected location to await rescue. Name?",q:"An occupant unable to evacuate the floor or stairwell should be moved to:",opts:["The elevator","An area of refuge (area of rescue assistance)","The roof","The fire floor"],ans:1,exp:"An area of refuge (area of rescue assistance) is a designated protected area on a floor where occupants who cannot evacuate can shelter and await rescue. The plan must identify who assists such occupants."},
+
+  // ══ 5. FDNY COMMUNICATIONS ════════════════════════════════════
+  {id:37,cat:"FDNY Communications",hint:"For a fire emergency, what must be the PRIMARY method of communication with FLS staff?",q:"The primary method of communication during a fire emergency must be:",opts:["Text message","Email","Verbal","Written memo"],ans:2,exp:"The primary communication during a fire emergency must be verbal. Text or email must NOT be used as the primary method — they are too slow and unreliable for a fast-moving emergency."},
+  {id:38,cat:"FDNY Communications",hint:"Office warden phones usually share a single line. What must callers be prepared to do?",q:"Because warden phones typically operate on a single telephone line, callers must:",opts:["Call repeatedly","Wait for the Fire Command Center to answer (calls can't all be answered at once)","Use email instead","Hang up after one ring"],ans:1,exp:"Warden phones typically run on a single line, so multiple calls cannot be answered simultaneously. Callers must wait for the Fire Command Center to answer their call."},
+  {id:39,cat:"FDNY Communications",hint:"When does the FLSD notify the affected floors vs. the whole building?",q:"When making fire announcements, the FLSD must notify:",opts:["The whole building first, then affected floors","The affected floors first (fire floor, above, below), then an all-call to the building","Only the lobby","Only the fire floor"],ans:1,exp:"The FLSD notifies the affected floors first — the fire/alarm floor, the floor above, and the floor below (if applicable) — then informs all occupants with an all-call announcement."},
+  {id:40,cat:"FDNY Communications",hint:"The two most critical pieces of info the 911 call-taker needs first.",q:"When calling 911 for a fire, the two MOST critical pieces of information are:",opts:["Your name and phone number","The nature of the emergency and the address","The number of occupants and the time","The building owner and insurance"],ans:1,exp:"The nature of the emergency and the address are the most critical. The operator may also ask cross-streets, occupancy type, a callback number, fire location/description, and whether the FDNY plan was implemented. Don't hang up until told to."},
+
+  // ══ 6. BUILDING CONSTRUCTION & HIGH-RISE ══════════════════════
+  {id:41,cat:"Building Construction",hint:"The principal location where alarm/communication/control systems are displayed and managed. Located in the lobby.",q:"The Fire Command Center must be located:",opts:["On the roof","In the basement","In the lobby on the main entrance floor near the FDNY response point","In a penthouse"],ans:2,exp:"The Fire Command Center is the principal location where detection, alarm, communication, and control system status is displayed and managed. It must be in the lobby on the main entrance floor, near the FDNY response point."},
+  {id:42,cat:"Building Construction",hint:"Occupancy group for office buildings — previously known as Class E.",q:"Office buildings fall under which occupancy group (previously known as Class E)?",opts:["Group A (Assembly)","Group B (Business)","Group R-1 (Residential)","Group M (Mercantile)"],ans:1,exp:"Office buildings are Group B (Business), previously known as Class E. Hotels are Group R-1 (previously J-1). The F-89 covers office (Group B) occupancies."},
+  {id:43,cat:"Building Construction",hint:"Self-closing stairway doors must never be done this — it defeats the fire/smoke separation.",q:"Self-closing stairway doors must never be:",opts:["Painted","Chocked or propped open","Labeled","Inspected"],ans:1,exp:"Self-closing doors maintain a fire and smoke separation. Chocking or propping them open lets fire spread and smoke contaminate the stairways occupants need for egress. Magnetic hold-opens that release on alarm are the only acceptable method."},
+  {id:44,cat:"Building Construction",hint:"Why are elevators not used during a fire? The manual gives several reasons.",q:"Elevators are not to be used during a fire because they may:",opts:["Be too slow","Stop at the fire floor, lose power and trap passengers, or fill with smoke","Be reserved for staff","Cost too much to run"],ans:1,exp:"Elevators may operate erratically, stop at the fire floor exposing passengers to danger, lose power and trap passengers, and/or fill with smoke through the shaft. Occupants use stairs; FDNY controls elevators."},
+  {id:45,cat:"Building Construction",hint:"This high-rise 'chimney' effect drives smoke vertically and can even contaminate stairs BELOW the fire.",q:"The 'stack effect' in a high-rise refers to:",opts:["Stacking of furniture blocking exits","Vertical air movement that carries smoke up through the building","Stacked sprinkler zones","The order of evacuation"],ans:1,exp:"The stack effect is the vertical movement of air (and smoke) through a tall building's shafts and stairwells. It can even cause reverse smoke flow, contaminating stairways below the fire floor."},
+  {id:46,cat:"Building Construction",hint:"This stairway type gets PRIORITY for occupant evacuation when present.",q:"When a building has a fire tower, it should be:",opts:["Avoided during a fire","Given priority for occupant evacuation/relocation","Used only by FDNY","Locked during business hours"],ans:1,exp:"A fire tower stairway provides extra protection from smoke (via a vestibule/balcony) and should be given priority for occupants to use for evacuation or relocation."},
+
+  // ══ 7. NYC FIRE CODE & REGULATIONS ════════════════════════════
+  {id:47,cat:"NYC Fire Code",hint:"Transmitting this many unnecessary/unwarranted alarms in a 3-month window triggers an FDNY summons.",q:"It is unlawful to transmit how many unnecessary or unwarranted alarms in any three-month period?",opts:["2 or more","5 or more","10 or more","Any single one"],ans:0,exp:"Transmitting 2 or more unnecessary or unwarranted alarms in any three-month period is unlawful and subject to an FDNY summons. The premises owner is responsible for preventing them."},
+  {id:48,cat:"NYC Fire Code",hint:"When a smoke detector reports it needs maintenance to the FACP, the manual gives a specific cleaning deadline.",q:"When a smoke detector reports the need for maintenance to the FACP, it must be cleaned within:",opts:["24 hours","1 week","30 days","90 days"],ans:1,exp:"Per the manual (NFPA 72), when a smoke detector reports the need for maintenance to the fire alarm control panel, it must be cleaned within 1 week."},
+  {id:49,cat:"NYC Fire Code",hint:"Standpipe and sprinkler inspection/test records must be kept on premises for how long?",q:"Standpipe and sprinkler system inspection, testing, and maintenance records must be kept on premises for a minimum of:",opts:["6 months","1 year","3 years","10 years"],ans:2,exp:"Records of standpipe and sprinkler system periodic inspections, tests, servicing, and maintenance must be kept on the premises for a minimum of 3 years (FC 901.6.2 / NFPA 25)."},
+  {id:50,cat:"NYC Fire Code",hint:"An exit aisle must be kept clear and is generally required to be at least this wide.",q:"An exit aisle is generally required to be at least how wide?",opts:["1 foot","2 feet","3 feet","6 feet"],ans:2,exp:"An exit aisle is generally required to be at least 3 feet wide and kept free of blockage. Locks, bolts, and chains must not be on exit doors while the building is in use."},
+  {id:51,cat:"NYC Fire Code",hint:"By this date, all NYC office buildings 100 ft+ were required to be fully sprinklered.",q:"By July 1, 2019, NYC required automatic sprinkler systems in all office buildings of what minimum height?",opts:["55 feet or more","75 feet or more","100 feet or more","200 feet or more"],ans:2,exp:"By 07/01/2019, all NYC office buildings 100 feet or more in height were required to install sprinkler systems throughout the entire building."},
+
+  // ══ 8. ON-SITE SCENARIOS / PRIORITY ORDER ═════════════════════
+  {id:52,cat:"On-Site Scenarios",hint:"Step 1 the moment a fire alarm activates — before anything else. Where does the FLSD go?",q:"On a fire alarm, the FLS Director's FIRST action is to:",opts:["Order full evacuation","Immediately report to the Fire Command Center","Reset the panel","Call the building owner"],ans:1,exp:"The FLSD must immediately report to the Fire Command Center, then acknowledge the alarm, address the panel to verify location/device, ensure elevators are recalled, ensure 911 is called, and communicate with FLS staff."},
+  {id:53,cat:"On-Site Scenarios",hint:"After reporting to the FCC and acknowledging, the FLSD 'addresses the panel' to find out what?",q:"After acknowledging the alarm at the FACP, the FLSD addresses the panel to verify:",opts:["The building's address","The location and which initiating device(s) activated","The central station's phone number","The elevator capacity"],ans:1,exp:"The FLSD addresses the panel to verify the location and which initiating device activated — manual pull station, smoke/beam/duct detector, heat detector, or water-flow device. This tells them where the alarm originated."},
+  {id:54,cat:"On-Site Scenarios",hint:"This building system must be recalled as part of the FLSD's immediate fire-alarm actions.",q:"As part of immediate fire-alarm response, the FLSD must ensure that all ___ are recalled.",opts:["staff","elevators","tenants","vehicles"],ans:1,exp:"The FLSD must ensure all elevators are recalled (Phase I) as part of the immediate response, so elevators don't carry occupants to the fire floor or trap them."},
+  {id:55,cat:"On-Site Scenarios",hint:"A manual pull station should be used ONLY when what is actually observed — not just an odor.",q:"A manual pull station should be activated:",opts:["Whenever you smell anything","Only when fire or smoke conditions are actually observed","During any emergency including active shooter","Only by FDNY"],ans:1,exp:"A manual pull station is to be used only when fire or smoke is actually OBSERVED — not merely when there's an odor of smoke. Pulling it without observed fire/smoke can confuse responders about the fire's location."},
+  {id:56,cat:"On-Site Scenarios",hint:"During an active shooter, should you pull the fire alarm? The manual is explicit.",q:"During an active shooter emergency, the manual pull station:",opts:["Should be pulled to alert everyone","Must NOT be used","Should be pulled only on the ground floor","Recalls the elevators"],ans:1,exp:"Manual pull stations must NOT be used during an active shooter (or other non-fire) emergency. Doing so may send occupants into stairways or out of the building when they should be sheltering in place."},
+  {id:57,cat:"On-Site Scenarios",hint:"Brigade members on the fire floor report to the floor below the fire to do what?",q:"FLS brigade members responding to a fire should report to the floor below the fire to:",opts:["Rest","Assist in evacuation and provide information to responding firefighters","Shut off the power","Wait for the all-clear"],ans:1,exp:"Brigade members report to the floor below the fire to assist in evacuation and to provide information to the Fire Command Center and responding firefighters. They notify the FCC of the situation as soon as practicable."},
+  {id:58,cat:"On-Site Scenarios",hint:"Before a warden or brigade member enters the fire floor, they must do what — and check the door how?",q:"Before entering a fire floor or stairway, FLS staff should check the door by:",opts:["Opening it fully and looking","Feeling it with the back of the hand for heat — if hot, DO NOT open","Kicking it open","Knocking and waiting"],ans:1,exp:"Check doors with the BACK of the hand for heat. If hot, DO NOT open it. If cool, open slightly and look for smoke and feel for heat. Verify it's safe before entering."},
+  {id:59,cat:"On-Site Scenarios",hint:"Wardens confirm a floor is clear by what method — not merely by the absence of a voice response.",q:"A warden confirms relocation/evacuation of a floor by:",opts:["Lack of a voice response","Visual inspection of all areas of the floor","Checking the sign-in sheet","Asking over the PA"],ans:1,exp:"Wardens direct deputy wardens and searchers to search ALL areas of the floor by VISUAL inspection — not merely by the lack of a voice response. Someone could be unconscious, hiding, or unable to answer."},
+
+  // ══ 9. FIRE COMMAND CENTER OPERATIONS ═════════════════════════
+  {id:60,cat:"Fire Command Center",hint:"This button acknowledges the alarm/trouble/supervisory condition and may identify the device or zone.",q:"The Acknowledge (ACK) button on the FACP is used to:",opts:["Clear the alarm permanently","Acknowledge alarm/trouble/supervisory conditions; may identify the device or zone","Recall the elevators","Call 911"],ans:1,exp:"The ACK button acknowledges alarm, trouble, and supervisory conditions, and pressing it may identify the device or zone in alarm if not already shown. It does not clear the condition."},
+  {id:61,cat:"Fire Command Center",hint:"NEVER do these two things until the condition is verified by FDNY firefighting personnel.",q:"You must never silence or reset the fire alarm system until:",opts:["The buzzer becomes annoying","The condition is verified by FDNY firefighting personnel","Five minutes have passed","The building owner approves"],ans:1,exp:"NEVER silence or reset the fire alarm until the condition is verified by FDNY firefighting personnel. Silencing/resetting prematurely can mask an active fire."},
+  {id:62,cat:"Fire Command Center",hint:"The alarm silence switch quiets the building horns/strobes — but does it stop the signal to the central station?",q:"The alarm silence switch silences building audible/visual devices but does NOT:",opts:["Stop the signal being transmitted to the FDNY-approved central station","Affect the elevators","Turn off the lights","Lock the doors"],ans:0,exp:"The silence switch quiets building notification appliances (after evacuation, while the source is investigated) but does NOT prevent the signal from being transmitted to the FDNY-approved central station."},
+  {id:63,cat:"Fire Command Center",hint:"A reset won't return the panel to normal if WHAT is still in alarm?",q:"An FACP indicating an alarm cannot be reset to 'normal' if:",opts:["The power is off","The initiating device(s) have not returned to normal from alarm","The central station is busy","The FLSD is absent"],ans:1,exp:"The panel cannot reset to normal while the initiating device is still in alarm — e.g., a smoke detector still sensing smoke or a pull station still pulled. Another alarm will generate until the device clears."},
+  {id:64,cat:"Fire Command Center",hint:"FDNY is NOT dispatched to respond to these two signal types (they don't indicate a fire).",q:"The FDNY is NOT dispatched to respond to which signals?",opts:["Alarm signals","Supervisory and trouble signals","Water-flow signals","Manual pull signals"],ans:1,exp:"The FDNY is not dispatched for supervisory or trouble signals — neither indicates a fire. Supervisory = a fire-protection system condition (e.g., closed valve); Trouble = an electrical fault in the alarm system. The FLSD investigates and contacts the contractor."},
+  {id:65,cat:"Fire Command Center",hint:"A closed sprinkler control valve generates which kind of signal at the FACP?",q:"A closed sprinkler control valve (detected by a tamper switch) generates a:",opts:["Fire alarm signal","Supervisory signal","Trouble signal","Reset signal"],ans:1,exp:"A closed control valve (sensed by a tamper switch) generates a SUPERVISORY signal — it means a fire-protection system has been compromised. The FLSD must investigate and correct it. Not a fire, so FDNY isn't dispatched."},
+  {id:66,cat:"Fire Command Center",hint:"After a fire alarm is reset, the HVAC fans usually need what — from a separate control?",q:"After a fire alarm is reset, the HVAC fans usually require:",opts:["No action — they restart automatically","Restarting from a separate 'fan restart' button or key switch","A new sprinkler head","A central station call"],ans:1,exp:"After reset, fans usually must be restarted from a separate 'fan restart' button or key switch — they don't automatically resume. Most trouble/supervisory conditions, however, clear automatically when normal conditions return."},
+
+  // ══ 10. HUMAN BEHAVIOR IN EMERGENCIES ═════════════════════════
+  {id:67,cat:"Human Behavior",hint:"Portable fire extinguishers have a clear limit — what are they NOT intended to fight?",q:"Portable fire extinguishers are NOT intended to fight:",opts:["Trash can fires","Large or spreading fires","Electrical fires","Any fire"],ans:1,exp:"Portable extinguishers stop a small fire from becoming larger, but are NOT intended to fight large or spreading fires. By the time a fire has spread, an extinguisher won't be effective — evacuate instead."},
+  {id:68,cat:"Human Behavior",hint:"The mnemonic the FLSD teaches brigade members for using an extinguisher.",q:"The mnemonic for operating a fire extinguisher is:",opts:["STOP","PASS","RACE","DRAW"],ans:1,exp:"P.A.S.S. — Pull the pin, Aim at the base of the fire, Squeeze the handle, Sweep side to side. The FLSD teaches brigade members this technique."},
+  {id:69,cat:"Human Behavior",hint:"In a non-sprinklered building, the manual stresses immediate response because a fire can do what every minute?",q:"In a building not protected by sprinklers, why is immediate response to a fire alarm emphasized?",opts:["The alarm is louder","A fire can double in size every minute","Sprinklers will fail","Elevators stop working"],ans:1,exp:"In non-sprinklered buildings, a fire can double in size every minute — so immediate response to an alarm is critical. This is why hesitation and the denial phase are so dangerous."},
+  {id:70,cat:"Human Behavior",hint:"If you're trapped and can't evacuate, the manual says retreat to a room with a solid door and do what?",q:"If an occupant is unable to safely evacuate, they should retreat to a room with a solid door and:",opts:["Break a window and jump","Call 911, give their location, and seal gaps around the door against smoke","Wait silently","Take the elevator"],ans:1,exp:"If unable to evacuate, retreat to a room with a solid door, call 911 and give your location, and seal the spaces around the door (wet towels, duct tape) to reduce smoke infiltration."},
+
+  // ══ ADDED FROM INSTRUCTOR REVIEW DAY 1 ════════════════════════
+  // FLSD Duties / roles
+  {id:75,cat:"FLSD Duties",hint:"For ANY fire or non-fire emergency, what's the very first call — before anything else?",q:"For a fire or non-fire emergency, the universal first action is to:",opts:["Reset the panel","Call 911 first","Evacuate the building","Email building management"],ans:1,exp:"Call 911 FIRST for any fire or non-fire emergency. The FLSD calls 911 and informs them what part of the plan is being implemented. Occupants or staff also call 911 first, then notify the FLSD."},
+  {id:76,cat:"FLSD Duties",hint:"Besides regular business hours, the FLSD must also be present at two specific occupant thresholds.",q:"Beyond regular business hours, an FLSD must also be present when a building has:",opts:["Any occupants at all","500+ occupants, OR 100+ occupants above or below street level","1,000+ occupants only","Fewer than 50 occupants"],ans:1,exp:"The FLSD must be present during regular business hours AND when there are a total of 500+ occupants, or 100+ occupants above or below street level (the lowest level of exit discharge). The FLSD can be relieved by the Deputy FLSD."},
+  {id:77,cat:"FLSD Duties",hint:"Both the FLSD and the Deputy FLSD hold the same certificate. Which one?",q:"The FLSD and Deputy FLSD must both hold:",opts:["An S-95 C of F","An F-89 (FLS Director) C of F","A W-07 C of F","No certificate"],ans:1,exp:"Both the FLSD and Deputy FLSD must hold the F-89 (FLS Director) Certificate of Fitness. The Deputy can relieve the FLSD during business hours."},
+  {id:78,cat:"FLSD Duties",hint:"After regular business hours, who can carry out FLSD duties — and notably does NOT hold a C of F?",q:"After regular business hours, FLSD duties may be carried out by a Building Evacuation Supervisor (BES), who:",opts:["Must hold an F-89 C of F","Does NOT have a C of F","Must be a firefighter","Must be the building owner"],ans:1,exp:"After regular business hours, a Building Evacuation Supervisor (BES) can carry out the FLSD's duties. Unlike the FLSD and Deputy FLSD, the BES does NOT have a Certificate of Fitness. (Office buildings only.)"},
+  {id:79,cat:"FLSD Duties",hint:"FLSD normally runs fire drills, but there's an exception — another certificate holder can, under FLSD supervision.",q:"Fire drills are conducted by the FLSD, EXCEPT they may also be conducted by a:",opts:["Security guard","Fire Drill Conductor (W-07) under FLSD supervision","Building tenant","Deputy FLSD only"],ans:1,exp:"The FLSD conducts fire drills, but as an exception they may be conducted by a Fire Drill Conductor (W-07 C of F) under the personal supervision of the FLSD."},
+  {id:80,cat:"FLSD Duties",hint:"Three key documents must be kept at the Fire Command Center for FDNY. The plan, the floor plans, and one card.",q:"Which documents must be kept at the Fire Command Center?",opts:["Only the logbook","The FDNY Plan, Floor Plans, and Building Information Card (BIC)","Tenant leases","Employee timesheets"],ans:1,exp:"The FDNY Plan, Floor Plans, and the Building Information Card (BIC) must be kept at the Fire Command Center for use by responding firefighters."},
+  // Staff specifics
+  {id:81,cat:"FLSD Duties",hint:"In a fire, at least one brigade member must stay on a specific floor relative to the fire. Which?",q:"During a fire, at least one FLS brigade member must remain on the:",opts:["Fire floor","Floor below the fire","Roof","Lobby"],ans:1,exp:"At least one brigade member must remain on the floor BELOW the fire — to assist evacuation and provide information to responding firefighters at the Fire Command Center."},
+  {id:82,cat:"FLSD Duties",hint:"During a fire emergency, the warden reports to a specific device. Which one?",q:"During a fire emergency, the FLS warden reports to the FLSD using the:",opts:["Public address system","Warden phone","Personal cell phone","Email"],ans:1,exp:"During a fire emergency, the warden reports to (and communicates through) the warden phone to keep the FLSD informed of conditions on the floor."},
+  // Pull stations
+  {id:83,cat:"Fire Protection Systems",hint:"A single-action pull station needs how many actions to activate the alarm?",q:"A single-action manual pull station requires how many steps to activate?",opts:["One step (pull)","Two steps","Three steps","No action — automatic"],ans:0,exp:"A single-action pull station requires only ONE step to activate the alarm (pull). A double-action station requires TWO steps (e.g., push in / lift, then pull)."},
+  {id:84,cat:"Fire Protection Systems",hint:"A double-action pull station — what two motions does it require?",q:"A double-action manual pull station requires:",opts:["Only a pull","Two steps — e.g., push in (or lift) then pull","A key","A code"],ans:1,exp:"A double-action pull station requires TWO steps to activate — for example, 'push in and pull down' or 'lift and pull.' The design reduces accidental activation. FLSDs must be able to visually identify single vs. double action."},
+  {id:85,cat:"Fire Protection Systems",hint:"Where must manual pull stations be located, and what 3 qualities must they have?",q:"Manual pull stations must be located on each floor near the exits and be:",opts:["Hidden and locked","Conspicuous, unobstructed, and accessible","Behind glass only","In the basement"],ans:1,exp:"Manual fire alarm boxes (pull stations) must be located on each floor near the exits, throughout the protected area, so they are conspicuous, unobstructed, and accessible."},
+  {id:86,cat:"Fire Command Center",hint:"Before you can reset the main fire panel, what must be reset first?",q:"Before the main Fire Alarm Control Panel can be reset, you must first reset:",opts:["The elevators","The activated manual pull station (or initiating device)","The HVAC","The central station"],ans:1,exp:"An activated manual pull station (or other initiating device) must be reset BEFORE the main FACP can be reset. The FACP shall only be reset at the direction of an FDNY representative."},
+  // Heat detectors
+  {id:87,cat:"Fire Protection Systems",hint:"This heat detector type triggers on a fast temperature climb and does NOT need replacement after activating.",q:"A rate-of-rise heat detector:",opts:["Requires replacement after every activation","Activates on a rapid temperature increase and does NOT require replacement (it resets)","Only detects smoke","Is the same as a smoke detector"],ans:1,exp:"A rate-of-rise heat detector activates when room temperature climbs rapidly. It does NOT have to be replaced after activating — it resets. (The fixed-temperature type normally requires replacement.)"},
+  {id:88,cat:"Fire Protection Systems",hint:"This heat detector type has a component that MELTS at a preset temp — and usually needs replacing after.",q:"A fixed-temperature heat detector:",opts:["Resets itself every time","Activates when its component melts at a preset temperature and normally requires replacement","Detects rate of temperature rise","Never needs replacement"],ans:1,exp:"A fixed-temperature heat detector activates when its component melts at a preset temperature level. It normally REQUIRES replacement after activating (though some 'intelligent' detectors reset themselves)."},
+  // Initiating devices / detectors
+  {id:89,cat:"Fire Protection Systems",hint:"Installing a camera hidden inside a device shaped like a smoke detector is what, legally?",q:"Installing a hidden camera inside a shell that resembles a smoke detector (a dummy device) is:",opts:["Recommended for security","Unlawful","Required by code","Only allowed in lobbies"],ans:1,exp:"It is UNLAWFUL to install or maintain any device with the physical appearance of fire protection equipment that doesn't perform a fire protection function (e.g., a hidden camera in a fake smoke detector). It could be confused with real equipment."},
+  {id:90,cat:"Fire Protection Systems",hint:"A flammable/combustible gas detector wired to the FACP generates which signal — yet FDNY still gets notified?",q:"When a flammable/combustible gas detector is connected to the FACP, its activation generates a supervisory signal, and:",opts:["No one is notified","The FDNY is still notified to respond","Only the building owner is called","It sounds a fire alarm"],ans:1,exp:"A gas detector connected to the FACP generates a SUPERVISORY signal (no fire alarm sounds), but the FDNY IS notified to respond — an exception to the general rule that FDNY doesn't respond to supervisory signals. The FLSD follows the plan until FDNY arrives."},
+  // Two-way communication
+  {id:91,cat:"FDNY Communications",hint:"Warden phones are used by building occupants. This OTHER two-way system is used by firefighters & police.",q:"The wireless two-way system used by firefighters and police that carries FDNY portable radio frequencies inside a building is the:",opts:["Warden phone system","ARC (Auxiliary Radio Communication) System","Public address system","Central station"],ans:1,exp:"The ARC (Auxiliary Radio Communication) System is the wireless two-way system that receives and transmits FDNY portable radio frequencies within the building — used by firefighters, police, and emergency services."},
+  {id:92,cat:"FDNY Communications",hint:"If the ARC system goes out of service, who must be notified immediately — and what gets placed at the FCC?",q:"If the ARC System is out of service, the FLSD must:",opts:["Wait until the next inspection","Notify the FDNY immediately and place an Out-of-Service tag at the Fire Command Center","Do nothing","Only tell the building owner"],ans:1,exp:"The FDNY must be notified IMMEDIATELY if the ARC System is out of service, and an Out-of-Service tag must be placed at the Fire Command Center (or other approved location)."},
+  {id:93,cat:"FDNY Communications",hint:"The FCC can't call individual warden phones. So how does the FLSD get a specific floor warden to make contact?",q:"Since the Fire Command Center cannot call individual warden phones, when the FLSD needs a specific floor, the FLSD:",opts:["Sends an email","Makes an announcement instructing that floor warden to initiate contact","Walks to the floor","Waits for the warden to call"],ans:1,exp:"The FCC cannot call individual warden phones. If the FLSD needs to communicate with a floor, the FLSD makes an announcement instructing that floor warden to initiate contact (call the FCC)."},
+  // Unwarranted alarms — penalties
+  {id:94,cat:"NYC Fire Code",hint:"How many unwarranted alarms are allowable before it's unlawful? And what's the first-offense penalty vs. second?",q:"Regarding unnecessary/unwarranted alarms: 1 is allowable, but the penalties for the count in a 3-month period are:",opts:["1 = ticket, 2 = arrest","1 = warning, 2 = ticket (summons)","1 = fine, 2 = shutdown","No penalties apply"],ans:1,exp:"One unwarranted alarm is allowable. 2 or more in a 3-month period is unlawful: the first is a warning, the second is a ticket (summons). Examples: testing without taking it offline, construction dust, shower steam, cigarette smoke."},
+  // Alarm-activated building features
+  {id:95,cat:"Building Construction",hint:"The fail-safe door release, on alarm, unlocks stairway doors from which side?",q:"When activated, the fail-safe door release unlocks stairway doors from the:",opts:["Floor side only","Stair side","Roof only","It locks them instead"],ans:1,exp:"The fail-safe door release allows stairway doors equipped with the system to be unlocked from the STAIR side, so occupants in the stairwell can re-enter a floor to escape smoke. Note: a manual pull may NOT release these automatically — the FLSD may have to release them manually after confirming fire/smoke."},
+  {id:96,cat:"Building Construction",hint:"Several building features activate automatically on alarm — dampers, hold-opens, recall, HVAC. What shuts the HVAC?",q:"Which device typically triggers automatic HVAC shutdown during a fire?",opts:["A water-flow switch","A duct smoke detector","A manual pull station","The elevator recall"],ans:1,exp:"A duct smoke detector shuts down the HVAC system to stop smoke from spreading through the ductwork. Other alarm-activated features: fire/smoke dampers, hold-open device release, elevator recall, and fail-safe door release."},
+
+  // ══ READING COMPREHENSION (passage-based) ═════════════════════
+  {id:71,cat:"Reading Comprehension",passageId:"p1",groupLabel:"Passage 1 · Question 1 of 2",hint:"Re-read what the FLSD does right after acknowledging the alarm — what do they 'address' to verify the device?",q:"According to the passage, after acknowledging the alarm the FLSD addresses the panel to verify:",opts:["The building's street address","The location and which initiating device activated","The number of occupants","The central station fee"],ans:1,exp:"The passage states the FLSD 'addresses the panel to verify the location and which initiating device activated — manual pull station, smoke/beam/duct detector, heat detector, or water-flow device.'"},
+  {id:72,cat:"Reading Comprehension",passageId:"p1",groupLabel:"Passage 1 · Question 2 of 2",hint:"The passage names the primary method of communication during a fire — and what must NOT be primary.",q:"According to the passage, the primary method of communication during a fire emergency must be:",opts:["Email","Text message","Verbal","Written memo"],ans:2,exp:"Per the passage: 'The primary communication must be made verbally; text or email must not be the primary method during a fire emergency.'"},
+  {id:73,cat:"Reading Comprehension",passageId:"p2",groupLabel:"Passage 2 · Question 1 of 1",hint:"The passage states an exact number of floors below the present location for relocation.",q:"According to the passage, occupants relocate to a safe location at least how many floors below their present location?",opts:["One floor below","Two floors below","Three floors below","Five floors below"],ans:2,exp:"The passage states occupants 'relocate to a safe location within the same building at least three floors below their present location, or evacuate consistent with the FDNY plan.'"},
+  {id:74,cat:"Reading Comprehension",passageId:"p3",groupLabel:"Passage 3 · Question 1 of 1",hint:"How does the warden confirm the floor is clear — re-read the part about visual inspection.",q:"According to the passage, the FLS warden confirms relocation/evacuation of the floor by:",opts:["Listening for a voice response","Directing a visual inspection of all areas of the floor","Checking a sign-in sheet","Calling each office"],ans:1,exp:"Per the passage, the warden confirms by 'directing deputy FLS wardens and FLS searchers to search all areas of the floor — and to do so by visual inspection, not merely by the lack of a voice response.'"},
+
+  // ══ NON-FIRE EMERGENCIES (EAP scenarios) ══════════════════════
+  {id:97,cat:"Non-Fire Emergencies",hint:"The single guiding rule for choosing ANY non-fire action — it's about where the occupants are relative to the danger.",q:"In any non-fire emergency, the FLS Director should choose an EAP action (or combination of actions) that:",opts:["Empties the building the fastest","Keeps occupants away from the threat","Always shelters everyone in place","Recalls all elevators to the affected floor"],ans:1,exp:"The overriding principle is to implement the action — shelter in place, in-building relocation, partial evacuation, or full evacuation — that keeps occupants AWAY from the threat. The right choice depends on the type of emergency and whether it's inside or outside the building."},
+  {id:98,cat:"Non-Fire Emergencies",hint:"Same command post as a fire. Where does the FLSD go to run command, communication, and control?",q:"During a non-fire emergency, the FLS Director should immediately report to and operate from the:",opts:["Lobby security desk","Fire Command Center","Roof bulkhead","Building management office"],ans:1,exp:"Just as in a fire, the FLSD immediately reports to the Fire Command Center, which is used for command, communication, and control of the emergency."},
+  {id:99,cat:"Non-Fire Emergencies",hint:"For full credit on the on-site exam, the 911 call must include TWO things — the situation, plus a decision.",q:"When implementing the plan for a non-fire emergency, the FLSD must report to 911 the emergency situation AND:",opts:["The building's square footage","The decision to implement the plan and which EAP action is being taken","The names of all the wardens","The building's insurance carrier"],ans:1,exp:"The 911 call must cover two details to receive full credit on the on-site exam: (1) the emergency situation, and (2) the determination to implement the plan and which non-fire (EAP) action is being implemented."},
+  {id:100,cat:"Non-Fire Emergencies",hint:"Different from a fire, where occupants never use elevators. Here the FLSD recalls them, then makes a judgment call.",q:"How does the FLSD handle elevators in a non-fire emergency?",opts:["Never use them, exactly as in a fire","Recall all elevators, then determine whether it is safe to use them","Leave them running on automatic","Send them to the affected floor"],ans:1,exp:"Unlike a fire (where occupants don't use elevators), in a non-fire emergency the FLSD recalls all elevators and then determines if it is safe to use them. If safe, only elevators with two-way voice communication may be used, operated in manual/independent mode. (Active shooter situations are handled separately.)"},
+  {id:101,cat:"Non-Fire Emergencies",hint:"When the danger is OUTSIDE, leaving the building can be the worst move. Which situation favors staying put?",q:"Sheltering in place or in-building relocation is generally the better choice when:",opts:["A fire is on the occupants' own floor","The threat is outside — e.g., severe weather, a bomb threat outside, or a chemical release outdoors","The building is structurally collapsing","There is heavy smoke in the stairwell"],ans:1,exp:"Shelter in place / in-building relocation is appropriate when it's safer to stay inside because of an outside threat — severe weather (tornado, hail), a civil disturbance near the premises, a bomb threat outside the building, or an accidental chemical release outdoors. Evacuating would expose occupants to the threat."},
+  {id:102,cat:"Non-Fire Emergencies",hint:"If gas is building up in one area, telling those people to 'stay put' would trap them WITH the hazard.",q:"When a natural gas or carbon monoxide leak is found inside a specific area of the building, occupants in that affected area should be:",opts:["Sheltered in place in that area","Moved away from the area, which is then isolated","Told to open the windows and wait","Sent by elevator to that floor"],ans:1,exp:"Occupants in the affected area should NOT be sheltered in place — that would expose them to the hazard. Move them away from the threat and isolate the affected area, advising everyone to stay clear of it."},
+  {id:103,cat:"Non-Fire Emergencies",hint:"The FLSD has authority to direct — but there's a hard limit on what they can physically do to occupants.",q:"If occupants refuse to follow the FLSD's non-fire emergency instructions, the FLSD may:",opts:["Physically remove them from the area","Strongly encourage them, but not physically force them unless law enforcement or public health officials mandate it","Lock them inside the affected area","Ignore them and reset the panel"],ans:1,exp:"The FLSD and FLS staff should strongly encourage occupants to follow orders, but they cannot physically force occupants to shelter in place, relocate, or evacuate — unless mandated by law enforcement or public health officials."},
+  {id:104,cat:"Non-Fire Emergencies",hint:"The FLSD can't decide on their own that it's over. Someone with authority has to say so first.",q:"The 'all clear' for a non-fire emergency can be given only when:",opts:["The FLSD personally feels it is safe","The authorities announce that the threat has passed","911 stops answering the line","The fire alarm panel resets"],ans:1,exp:"The 'all clear' can only be given once the authorities announce the threat has passed. The FLSD then makes an appropriate announcement to building occupants that the emergency is over."},
+  {id:105,cat:"Non-Fire Emergencies",hint:"The nationally recommended civilian survival options, in order of preference. Three short words.",q:"The recommended occupant response options during an active shooter incident, in order of preference, are:",opts:["Fight, Hide, Run","Run (evacuate), Hide, then Fight as a last resort","Shelter, Wait, Call","Hide, Fight, Run"],ans:1,exp:"The recommended response is Run – Hide – Fight: first try to evacuate (Run) if there's a safe path; if not, Hide (find cover/concealment, lock and barricade, silence phones); and only as a last resort, Fight to disrupt or incapacitate the shooter. Do NOT pull the fire alarm — it can send people into harm's way."},
+  {id:106,cat:"Non-Fire Emergencies",hint:"The cardinal rule for an unattended or suspicious package — what you must never do to it.",q:"If a suspicious or unattended package is found inside the building, occupants and staff should:",opts:["Open it to check the contents","Carry it outside immediately","Not touch, move, or cover it — isolate the area, keep people away, and notify authorities","Place it in water"],ans:2,exp:"Never touch, move, open, or cover a suspicious or unattended package. Isolate the area, keep occupants away, and notify the authorities (911 / FDNY / NYPD). Let trained responders handle it."}
+];
+
+// ══════════════════════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════════════════════
+let TOTAL_PER_SESSION = 10;
+let mode = 'practice';
+let selectedCategories = new Set(); // empty = all categories
+let currentIndex = 0;
+let score = 0;
+let streak = 0;
+let sessionQuestions = [];
+let flagged = new Set();
+let wrongAnswers = [];
+let usedFirst = false;
+let elapsedSeconds = 0;
+let timerInterval = null;
+let previousScreen = 'home';
+let categoryStats = {};
+let currentUtterance = null;
+let speakingTarget = null;
+
+// ══════════════════════════════════════════════════════════════════
+// HISTORY (localStorage)
+// ══════════════════════════════════════════════════════════════════
+function getHistory() {
+  try { return JSON.parse(localStorage.getItem('f89History') || '[]'); } catch(e) { return []; }
+}
+function saveHistory(session) {
+  const h = getHistory();
+  h.push(session);
+  if (h.length > 20) h.shift();
+  try { localStorage.setItem('f89History', JSON.stringify(h)); } catch(e) {}
+}
+function renderHomeProgress() {
+  const h = getHistory();
+  const wrap = document.getElementById('hp-bars-wrap');
+  const statsEl = document.getElementById('hp-stats');
+  if (h.length === 0) {
+    wrap.innerHTML = '<div class="hp-empty-msg">No sessions yet — start your first test!</div>';
+    statsEl.style.display = 'none';
+    return;
+  }
+  const last5 = h.slice(-5);
+  let barsHtml = '<div class="hp-bars">';
+  last5.forEach(s => {
+    const col = s.pct >= 70 ? 'var(--green)' : s.pct >= 50 ? 'var(--accent)' : 'var(--red)';
+    barsHtml += `<div class="hp-bar-wrap"><div class="hp-bar" style="height:${s.pct}%;background:${col}"></div><div class="hp-score">${s.pct}%</div></div>`;
+  });
+  for (let i = last5.length; i < 5; i++) {
+    barsHtml += '<div class="hp-bar-wrap"><div class="hp-bar empty" style="height:4px"></div><div class="hp-score">—</div></div>';
+  }
+  barsHtml += '</div>';
+  wrap.innerHTML = barsHtml;
+  const all = h.map(s => s.pct);
+  const best = Math.max(...all);
+  const avg = Math.round(all.reduce((a,b) => a+b, 0) / all.length);
+  document.getElementById('hp-best').textContent = best + '%';
+  document.getElementById('hp-avg').textContent = avg + '%';
+  document.getElementById('hp-sessions').textContent = h.length;
+  statsEl.style.display = 'flex';
+}
+
+// ══════════════════════════════════════════════════════════════════
+// WEAK SPOT DRILL
+// ══════════════════════════════════════════════════════════════════
+function getCategoryHistory() {
+  try { return JSON.parse(localStorage.getItem('f89CatHistory') || '{}'); } catch(e) { return {}; }
+}
+function saveCategoryStats(stats) {
+  const existing = getCategoryHistory();
+  Object.entries(stats).forEach(([cat, s]) => {
+    if (!existing[cat]) existing[cat] = { correct: 0, total: 0 };
+    existing[cat].correct += s.correct;
+    existing[cat].total += s.total;
+  });
+  try { localStorage.setItem('f89CatHistory', JSON.stringify(existing)); } catch(e) {}
+}
+function checkDrillAvailability() {
+  const h = getHistory();
+  const drillBtn = document.getElementById('drill-btn');
+  const drillMsg = document.getElementById('drill-unavail');
+  if (h.length < 2) {
+    drillBtn.style.opacity = '0.5';
+    drillMsg.style.display = 'block';
+  } else {
+    drillBtn.style.opacity = '1';
+    drillMsg.style.display = 'none';
+  }
+}
+function startDrill() {
+  const h = getHistory();
+  if (h.length < 2) return;
+  const catH = getCategoryHistory();
+  const weakCats = Object.entries(catH)
+    .filter(([,s]) => s.total > 0 && (s.correct/s.total) < 0.70)
+    .map(([cat]) => cat);
+  // Respect the category filter if the user picked specific categories
+  const basePool = getFilteredQuestions();
+  if (basePool.length === 0) { document.getElementById('cat-empty-warn').style.display = 'block'; return; }
+  let pool = [];
+  basePool.forEach(q => {
+    if (weakCats.includes(q.cat)) { pool.push(q); pool.push(q); pool.push(q); }
+    else pool.push(q);
+  });
+  pool = pool.sort(() => Math.random() - 0.5);
+  const seen = new Set();
+  const deduped = [];
+  for (const q of pool) {
+    if (!seen.has(q.id)) { seen.add(q.id); deduped.push(q); }
+    if (deduped.length >= TOTAL_PER_SESSION) break;
+  }
+  mode = 'drill';
+  launchQuiz(deduped);
+}
+
+// ══════════════════════════════════════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════════════════════════════════════
+function showScreen(id) {
+  stopSpeaking();
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  window.scrollTo(0,0);
+  if (id === 'home') { renderHomeProgress(); checkDrillAvailability(); }
+}
+function goBackFromFormula() {
+  showScreen(previousScreen);
+  if (previousScreen === 'quiz') {
+    const hintBtn = document.getElementById('btn-hint');
+    if (hintBtn) hintBtn.style.display = (mode === 'practice' || mode === 'drill') ? 'flex' : 'none';
+  }
+}
+function goToFormula() { previousScreen = 'quiz'; showScreen('formula-sheet'); }
+
+// ══════════════════════════════════════════════════════════════════
+// QUESTION COUNT
+// ══════════════════════════════════════════════════════════════════
+function setCount(n, el) {
+  TOTAL_PER_SESSION = n;
+  document.querySelectorAll('.q-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// CATEGORY SELECTOR
+// ══════════════════════════════════════════════════════════════════
+// Ordered list of categories with how many questions each has
+function getCategoryList() {
+  const counts = {};
+  const order = [];
+  QUESTIONS.forEach(q => {
+    if (!(q.cat in counts)) { counts[q.cat] = 0; order.push(q.cat); }
+    counts[q.cat]++;
+  });
+  return order.map(cat => ({ cat, count: counts[cat] }));
+}
+
+// Returns the questions matching the current category filter (or all if none/empty)
+function getFilteredQuestions() {
+  if (selectedCategories.size === 0) return [...QUESTIONS];
+  return QUESTIONS.filter(q => selectedCategories.has(q.cat));
+}
+
+function renderCategoryChips() {
+  const wrap = document.getElementById('cat-chips');
+  const cats = getCategoryList();
+  let html = '';
+  // "All" chip
+  const allActive = selectedCategories.size === 0;
+  html += `<button class="cat-chip all-chip${allActive ? ' active' : ''}" onclick="toggleAllCats()">All Categories</button>`;
+  cats.forEach(({cat, count}) => {
+    const active = selectedCategories.has(cat);
+    html += `<button class="cat-chip${active ? ' active' : ''}" onclick="toggleCat('${cat.replace(/'/g, "\\'")}')">${cat} <span class="chip-n">${count}</span></button>`;
+  });
+  wrap.innerHTML = html;
+  // keep height in sync if open
+  if (!wrap.classList.contains('collapsed')) wrap.style.maxHeight = wrap.scrollHeight + 'px';
+  updateCatCount();
+}
+
+function updateCatCount() {
+  const pool = getFilteredQuestions();
+  const label = document.getElementById('cat-count');
+  const warn = document.getElementById('cat-empty-warn');
+  if (selectedCategories.size === 0) {
+    label.textContent = `All · ${pool.length} Qs`;
+  } else {
+    const names = selectedCategories.size === 1 ? '1 category' : `${selectedCategories.size} categories`;
+    label.textContent = `${names} · ${pool.length} Qs`;
+  }
+  warn.style.display = (selectedCategories.size > 0 && pool.length === 0) ? 'block' : 'none';
+}
+
+function toggleCat(cat) {
+  if (selectedCategories.has(cat)) selectedCategories.delete(cat);
+  else selectedCategories.add(cat);
+  renderCategoryChips();
+}
+
+function toggleAllCats() {
+  // Tapping "All Categories" clears any specific selection (= all)
+  selectedCategories.clear();
+  renderCategoryChips();
+}
+
+function toggleCatPicker() {
+  const chips = document.getElementById('cat-chips');
+  const btn = document.getElementById('cat-toggle');
+  const txt = document.getElementById('cat-toggle-text');
+  const collapsed = chips.classList.toggle('collapsed');
+  btn.classList.toggle('open', !collapsed);
+  if (collapsed) {
+    chips.style.maxHeight = '0';
+    txt.textContent = 'Choose specific categories';
+  } else {
+    chips.style.maxHeight = chips.scrollHeight + 'px';
+    txt.textContent = 'Hide categories';
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════
+// START QUIZ
+// ══════════════════════════════════════════════════════════════════
+function startQuiz(selectedMode) {
+  mode = selectedMode;
+  const pool = getFilteredQuestions();
+  if (pool.length === 0) { document.getElementById('cat-empty-warn').style.display = 'block'; return; }
+  const shuffled = [...pool].sort(() => Math.random() - 0.5);
+  const selected = shuffled.slice(0, Math.min(TOTAL_PER_SESSION, pool.length));
+  launchQuiz(selected);
+}
+
+function launchQuiz(questions) {
+  previousScreen = 'mode-select';
+  currentIndex = 0; score = 0; streak = 0;
+  flagged.clear(); wrongAnswers = []; usedFirst = false; hintUsed = false;
+  elapsedSeconds = 0; categoryStats = {};
+  stopSpeaking();
+  sessionQuestions = questions;
+  sessionQuestions.forEach(q => {
+    if (!categoryStats[q.cat]) categoryStats[q.cat] = { correct:0, total:0 };
+    categoryStats[q.cat].total++;
+  });
+  const badge = document.getElementById('mode-badge');
+  badge.textContent = mode === 'practice' ? 'Practice' : mode === 'exam' ? 'Exam' : mode === 'drill' ? 'Drill' : 'Quiz';
+  badge.className = 'quiz-mode-badge ' + mode;
+  document.querySelector('.progress-fill').style.background =
+    mode === 'practice' ? 'var(--green)' : mode === 'drill' ? 'var(--red)' : 'var(--accent)';
+  clearInterval(timerInterval);
+  const timerEl = document.getElementById('timer-display');
+  if (mode === 'exam' || mode === 'drill') {
+    timerEl.style.display = 'block';
+    updateTimerDisplay();
+    timerInterval = setInterval(() => { elapsedSeconds++; updateTimerDisplay(); }, 1000);
+  } else { timerEl.style.display = 'none'; }
+  document.getElementById('streak-badge').className = 'streak-badge';
+  showScreen('quiz');
+  renderQuestion();
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(elapsedSeconds/60), s = elapsedSeconds%60;
+  document.getElementById('timer-display').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+
+// ══════════════════════════════════════════════════════════════════
+// TAP OUT
+// ══════════════════════════════════════════════════════════════════
+function tapOut() {
+  stopSpeaking();
+  document.getElementById('tapout-count').textContent = currentIndex;
+  document.getElementById('tapout-modal').style.display = 'flex';
+}
+function closeTapOut() { document.getElementById('tapout-modal').style.display = 'none'; }
+function confirmTapOut() { document.getElementById('tapout-modal').style.display = 'none'; finishQuiz(currentIndex); }
+
+// ══════════════════════════════════════════════════════════════════
+// HINT SYSTEM (practice & drill only)
+// ══════════════════════════════════════════════════════════════════
+let hintUsed = false;
+
+function useHint() {
+  if (hintUsed) return;
+  const q = sessionQuestions[currentIndex];
+  if (!q.hint) return;
+  hintUsed = true;
+
+  document.getElementById('hint-text').textContent = q.hint;
+  document.getElementById('hint-box').classList.add('visible');
+
+  const hadStreak = streak > 0;
+  streak = 0;
+  updateStreak();
+
+  const btn = document.getElementById('btn-hint');
+  btn.classList.add('used');
+  btn.disabled = true;
+  btn.textContent = '💬 Hint Used';
+
+  const costMsg = document.getElementById('streak-cost-msg');
+  if (hadStreak) {
+    costMsg.textContent = '⚠️ Streak reset — hints have a cost!';
+  } else {
+    costMsg.textContent = '';
+  }
+}
+
+function openFormulaFromQuiz() {
+  previousScreen = 'quiz';
+  showScreen('formula-sheet');
+}
+
+function stopSpeaking() {
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  currentUtterance = null; speakingTarget = null;
+  document.querySelectorAll('.tts-btn').forEach(b => b.classList.remove('speaking'));
+}
+function speak(text, targetId) {
+  if (!window.speechSynthesis) return;
+  if (speakingTarget === targetId && window.speechSynthesis.speaking) { stopSpeaking(); return; }
+  stopSpeaking();
+  speakingTarget = targetId;
+  const btn = document.getElementById(targetId);
+  if (btn) btn.classList.add('speaking');
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9; u.pitch = 1.0; u.volume = 1.0;
+  u.onend = u.onerror = () => { if (btn) btn.classList.remove('speaking'); speakingTarget = null; };
+  currentUtterance = u;
+  window.speechSynthesis.speak(u);
+}
+function speakQuestion() {
+  const q = sessionQuestions[currentIndex];
+  const letters = ['A','B','C','D'];
+  const optBtns = document.querySelectorAll('.option-btn');
+  let optText = '';
+  optBtns.forEach((b,i) => { optText += `. Option ${letters[i]}: ${b.querySelector('span:last-child').textContent}`; });
+  speak(`Question: ${q.q}${optText}`, 'tts-q-btn');
+}
+function speakExplanation() {
+  speak(document.getElementById('feedback-text').textContent, 'tts-exp-btn');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// RENDER QUESTION
+// ══════════════════════════════════════════════════════════════════
+function renderQuestion() {
+  stopSpeaking();
+  const q = sessionQuestions[currentIndex];
+  usedFirst = false;
+  hintUsed = false;
+
+  document.getElementById('q-category').textContent = q.cat;
+  document.getElementById('q-text').textContent = q.q;
+  const pct = (currentIndex/TOTAL_PER_SESSION)*100;
+  document.getElementById('progress-fill').style.width = pct+'%';
+  document.getElementById('quiz-counter').textContent = `Q ${currentIndex+1} / ${TOTAL_PER_SESSION}`;
+  document.getElementById('flag-btn').className = 'flag-btn'+(flagged.has(currentIndex)?' flagged':'');
+  document.getElementById('feedback-box').className = 'feedback-box';
+  document.getElementById('tts-exp-btn').style.display = 'none';
+  document.getElementById('btn-next').className = 'btn-next';
+
+  const hintBox = document.getElementById('hint-box');
+  hintBox.classList.remove('visible');
+  document.getElementById('hint-text').textContent = '';
+  document.getElementById('streak-cost-msg').textContent = '';
+
+  const actionRow = document.getElementById('quiz-action-row');
+  const hintBtn = document.getElementById('btn-hint');
+  if (mode === 'practice' || mode === 'drill') {
+    actionRow.style.display = 'flex';
+    hintBtn.style.display = 'flex';
+    hintBtn.classList.remove('used');
+    hintBtn.disabled = false;
+    hintBtn.textContent = '💬 Hint';
+    if (!q.hint) { hintBtn.disabled = true; hintBtn.style.opacity = '0.3'; }
+    else { hintBtn.style.opacity = ''; }
+  } else {
+    actionRow.style.display = 'flex';
+    hintBtn.style.display = 'none';
+  }
+
+  const nextBtn = document.getElementById('btn-next');
+  nextBtn.className = 'btn-next'+(mode==='practice'?' practice-style':mode==='drill'?' drill-style':'');
+  nextBtn.textContent = currentIndex===TOTAL_PER_SESSION-1 ? 'Finish →' : 'Next →';
+
+  // Passage display
+  const passArea = document.getElementById('passage-area');
+  if (q.passageId && PASSAGES[q.passageId]) {
+    document.getElementById('passage-text').textContent = PASSAGES[q.passageId].text;
+    document.getElementById('passage-group-tag').textContent = q.groupLabel || '';
+    passArea.style.display = 'block';
+  } else { passArea.style.display = 'none'; }
+
+  const letters = ['A','B','C','D'];
+  const shuffledOpts = q.passageId
+    ? q.opts.map((text,i) => ({text, isCorrect: i===q.ans}))
+    : q.opts.map((text,i) => ({text, isCorrect: i===q.ans})).sort(() => Math.random()-0.5);
+  const list = document.getElementById('options-list');
+  list.innerHTML = '';
+  shuffledOpts.forEach((opt,i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span>${opt.text}</span>`;
+    btn.onclick = () => selectOption(btn, opt.isCorrect, q);
+    list.appendChild(btn);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════════
+// ANSWER SELECTION
+// ══════════════════════════════════════════════════════════════════
+function selectOption(btn, isCorrect, q) {
+  if (btn.disabled) return;
+  const allBtns = document.querySelectorAll('.option-btn');
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    allBtns.forEach(b => b.disabled = true);
+    if (!usedFirst) {
+      score++;
+      categoryStats[q.cat].correct++;
+      streak++;
+    }
+    updateStreak();
+    showFeedback(true, q);
+  } else {
+    btn.classList.add('selected-wrong');
+    if (mode === 'practice') {
+      // Allow one retry
+      if (!usedFirst) {
+        usedFirst = true;
+        streak = 0;
+        updateStreak();
+        btn.disabled = true;
+        setTimeout(() => {}, 200);
+        // First wrong — let them try again
+      } else {
+        // Second wrong: lock and show answer
+        allBtns.forEach(b => {
+          b.disabled = true;
+          const span = b.querySelector('span:last-child');
+          if (span && q.opts[q.ans] === span.textContent) b.classList.add('correct');
+        });
+        showFeedback(false, q);
+      }
+    } else {
+      // exam / drill — single shot
+      usedFirst = true;
+      streak = 0;
+      updateStreak();
+      allBtns.forEach(b => {
+        b.disabled = true;
+        const span = b.querySelector('span:last-child');
+        if (span && q.opts[q.ans] === span.textContent) b.classList.add('correct');
+      });
+      showFeedback(false, q);
+    }
+  }
+}
+
+function updateStreak() {
+  const badge = document.getElementById('streak-badge');
+  if (streak >= 3) {
+    badge.textContent = `🔥 ${streak}`;
+    badge.className = 'streak-badge visible';
+  } else {
+    badge.className = 'streak-badge';
+  }
+}
+
+function showFeedback(correct, q) {
+  const fb = document.getElementById('feedback-box');
+  const title = document.getElementById('feedback-title');
+  const text = document.getElementById('feedback-text');
+  const ttsExp = document.getElementById('tts-exp-btn');
+  if (correct) {
+    fb.className = 'feedback-box correct-fb';
+    title.textContent = '✓ Correct';
+  } else {
+    fb.className = 'feedback-box wrong-fb';
+    title.textContent = '✗ Incorrect';
+    wrongAnswers.push({ q, idx: currentIndex });
+  }
+  // Show explanation only in practice/drill, OR after final wrong in exam (we still show)
+  if (mode === 'practice' || mode === 'drill' || mode === 'exam') {
+    text.textContent = q.exp || '';
+    ttsExp.style.display = q.exp ? 'flex' : 'none';
+  }
+  document.getElementById('btn-next').classList.add('visible');
+}
+
+function toggleFlag() {
+  if (flagged.has(currentIndex)) flagged.delete(currentIndex);
+  else flagged.add(currentIndex);
+  document.getElementById('flag-btn').className = 'flag-btn' + (flagged.has(currentIndex) ? ' flagged' : '');
+}
+
+function nextQuestion() {
+  if (currentIndex === sessionQuestions.length - 1 || currentIndex === TOTAL_PER_SESSION - 1) {
+    finishQuiz(sessionQuestions.length);
+    return;
+  }
+  currentIndex++;
+  renderQuestion();
+}
+
+// ══════════════════════════════════════════════════════════════════
+// FINISH QUIZ
+// ══════════════════════════════════════════════════════════════════
+function finishQuiz(answeredCount) {
+  clearInterval(timerInterval);
+  stopSpeaking();
+  const total = answeredCount || sessionQuestions.length;
+  const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+  const passing = 70;
+
+  saveHistory({ pct, score, total, mode, ts: Date.now() });
+  saveCategoryStats(categoryStats);
+
+  document.getElementById('score-fraction').textContent = `${score}/${total}`;
+  document.getElementById('score-pct').textContent = `${pct}%`;
+  const ring = document.getElementById('score-ring');
+  const verdict = document.getElementById('results-verdict');
+  const sub = document.getElementById('results-sub');
+  if (pct >= passing) {
+    ring.className = 'results-score-ring pass';
+    verdict.className = 'results-verdict pass';
+    verdict.textContent = 'Passed';
+    sub.textContent = `Strong work. Keep drilling weak areas.`;
+  } else {
+    ring.className = 'results-score-ring fail';
+    verdict.className = 'results-verdict fail';
+    verdict.textContent = 'Keep Studying';
+    sub.textContent = `Passing is ${passing}%. Review wrong answers and try again.`;
+  }
+
+  // Category breakdown
+  const rows = document.getElementById('breakdown-rows');
+  rows.innerHTML = '';
+  Object.entries(categoryStats).forEach(([cat, s]) => {
+    if (s.total === 0) return;
+    const catPct = Math.round((s.correct / s.total) * 100);
+    const col = catPct >= 70 ? 'var(--green)' : catPct >= 50 ? 'var(--accent)' : 'var(--red)';
+    rows.innerHTML += `
+      <div class="breakdown-row">
+        <div class="breakdown-cat">${cat}</div>
+        <div class="breakdown-bar-wrap"><div class="breakdown-bar" style="width:${catPct}%;background:${col}"></div></div>
+        <div class="breakdown-frac" style="color:${col}">${s.correct}/${s.total}</div>
+      </div>`;
+  });
+
+  document.getElementById('btn-flagged').style.display = flagged.size > 0 ? 'block' : 'none';
+  showScreen('results');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// REVIEW
+// ══════════════════════════════════════════════════════════════════
+function showReview(type) {
+  const title = document.getElementById('review-title');
+  const body = document.getElementById('review-body');
+  body.innerHTML = '';
+
+  if (type === 'wrong') {
+    title.textContent = 'Wrong Answers';
+    if (wrongAnswers.length === 0) {
+      body.innerHTML = '<div style="text-align:center;color:var(--gray);padding:24px">No wrong answers — great job!</div>';
+    } else {
+      wrongAnswers.forEach(w => {
+        const q = w.q;
+        body.innerHTML += `
+          <div class="review-card wrong-card">
+            <div class="review-q-header">
+              <span class="review-status">✗</span>
+              <span class="review-q-num">${q.cat}</span>
+            </div>
+            <div class="review-q-text">${q.q}</div>
+            <div class="review-answer-row review-correct-ans">✓ Correct: ${q.opts[q.ans]}</div>
+            ${q.exp ? `<div class="review-explanation">${q.exp}</div>` : ''}
+          </div>`;
+      });
+    }
+  } else {
+    title.textContent = 'Flagged Questions';
+    if (flagged.size === 0) {
+      body.innerHTML = '<div style="text-align:center;color:var(--gray);padding:24px">No flagged questions.</div>';
+    } else {
+      Array.from(flagged).forEach(idx => {
+        const q = sessionQuestions[idx];
+        if (!q) return;
+        body.innerHTML += `
+          <div class="review-card flagged-card">
+            <div class="review-q-header">
+              <span class="review-status">🚩</span>
+              <span class="review-q-num">${q.cat}</span>
+            </div>
+            <div class="review-q-text">${q.q}</div>
+            <div class="review-answer-row review-correct-ans">✓ Answer: ${q.opts[q.ans]}</div>
+            ${q.exp ? `<div class="review-explanation">${q.exp}</div>` : ''}
+          </div>`;
+      });
+    }
+  }
+  showScreen('review');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// FLASHCARD MODE
+// ══════════════════════════════════════════════════════════════════
+let fcIndex = 0, fcKnew = 0, fcMissed = 0, fcQuestions = [], fcFlipped = false;
+
+function startFlashcard() {
+  const pool = getFilteredQuestions();
+  if (pool.length === 0) { document.getElementById('cat-empty-warn').style.display = 'block'; return; }
+  fcIndex=0; fcKnew=0; fcMissed=0; fcFlipped=false;
+  fcQuestions=[...pool].sort(()=>Math.random()-0.5).slice(0,Math.min(TOTAL_PER_SESSION,pool.length));
+  document.getElementById('fc-knew-count').textContent='✓ 0';
+  document.getElementById('fc-miss-count').textContent='✗ 0';
+  showScreen('flashcard');
+  renderFlashcard();
+}
+function renderFlashcard() {
+  const q=fcQuestions[fcIndex];
+  fcFlipped=false;
+  document.getElementById('fc-card').classList.remove('flipped');
+  document.getElementById('fc-cat').textContent=q.cat;
+  document.getElementById('fc-q').textContent=q.q;
+  document.getElementById('fc-a').textContent=q.opts[q.ans];
+  document.getElementById('fc-hint').textContent='Tap card to reveal answer';
+  document.getElementById('fc-actions').style.display='none';
+  document.getElementById('fc-before-actions').style.display='flex';
+  document.getElementById('fc-progress').style.width=((fcIndex/fcQuestions.length)*100)+'%';
+  document.getElementById('fc-counter').textContent=`${fcIndex+1} / ${fcQuestions.length}`;
+}
+function flipCard() {
+  if (fcFlipped) return;
+  fcFlipped=true;
+  document.getElementById('fc-card').classList.add('flipped');
+  document.getElementById('fc-hint').textContent='Did you know it?';
+  document.getElementById('fc-actions').style.display='flex';
+  document.getElementById('fc-before-actions').style.display='none';
+}
+function fcAnswer(knew) {
+  if (knew) fcKnew++; else fcMissed++;
+  document.getElementById('fc-knew-count').textContent=`✓ ${fcKnew}`;
+  document.getElementById('fc-miss-count').textContent=`✗ ${fcMissed}`;
+  fcIndex++;
+  if (fcIndex>=fcQuestions.length) {
+    alert(`Flashcards complete!\nKnew: ${fcKnew} ✓\nMissed: ${fcMissed} ✗\nScore: ${Math.round((fcKnew/fcQuestions.length)*100)}%`);
+    showScreen('mode-select');
+  } else renderFlashcard();
+}
+
+// ══════════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════════
+renderHomeProgress();
+checkDrillAvailability();
+renderCategoryChips();
+
+// ── PWA: Register Service Worker ──────────────────────────────────
+if ('serviceWorker' in navigator) {
+  const swCode = `
+    const CACHE = 'f89-prep-v4';
+    const ASSETS = [self.location.href];
+    self.addEventListener('install', e => {
+      e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
+      self.skipWaiting();
+    });
+    self.addEventListener('activate', e => {
+      e.waitUntil(caches.keys().then(keys =>
+        Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+      ));
+      self.clients.claim();
+    });
+    self.addEventListener('fetch', e => {
+      e.respondWith(
+        caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match(e.request)))
+      );
+    });
+  `;
+  const swBlob = new Blob([swCode], { type: 'application/javascript' });
+  const swUrl = URL.createObjectURL(swBlob);
+  navigator.serviceWorker.register(swUrl).catch(() => {});
+}
+
+// ── PWA: Install prompt banner ────────────────────────────────────
+let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  showInstallBanner();
+});
+
+function showInstallBanner() {
+  if (localStorage.getItem('installDismissed')) return;
+  const banner = document.getElementById('install-banner');
+  if (banner) banner.style.display = 'flex';
+}
+
+function installApp() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(() => {
+    deferredPrompt = null;
+    dismissInstall();
+  });
+}
+
+function dismissInstall() {
+  const banner = document.getElementById('install-banner');
+  if (banner) banner.style.display = 'none';
+  localStorage.setItem('installDismissed', '1');
+}
+
+window.addEventListener('appinstalled', () => {
+  dismissInstall();
+});
+</script>
+<!-- ══ PWA INSTALL BANNER ════════════════════════════════ -->
+<div id="install-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:#0f2040;border-top:1px solid #1e3a5f;padding:14px 18px;align-items:center;gap:14px;">
+  <div style="flex:1;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:#f0a500;letter-spacing:1px;text-transform:uppercase;">Install as App</div>
+    <div style="font-size:12px;color:#8a9bb5;margin-top:2px;">Add to home screen for offline access</div>
+  </div>
+  <button onclick="installApp()" style="background:#f0a500;color:#0a1628;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border-radius:4px;cursor:pointer;">Install</button>
+  <button onclick="dismissInstall()" style="background:none;border:1px solid #1e3a5f;color:#8a9bb5;font-size:18px;width:32px;height:32px;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+</div>
+
+</body>
+</html>
